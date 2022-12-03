@@ -3,6 +3,7 @@ import {
   HttpHandler,
   HttpRequest,
   HttpInterceptor,
+  HttpErrorResponse,
 } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
 import { AlertService } from './alert.service';
@@ -15,15 +16,21 @@ export class HttpErrorInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     return next.handle(req).pipe(
-      catchError((error) => {
-        const errorMessage = 'No internet connection or Server Error';
-
-    
+      catchError((res: HttpErrorResponse) => {
+        let errorMessage: string;
+        console.log(res.status);
+        switch (res.status) {
+          case 0:
+            errorMessage = 'No internet connection';
+            break;
+          default:
+            errorMessage = 'Server Error';
+        }
 
         // aquí podrías agregar código que muestre el error en alguna parte fija de la pantalla.
         this.alert.fire(
           {
-            title: 'Connect to Internet',
+            title: errorMessage,
             text: 'Or try later',
             icon: 'error',
           },

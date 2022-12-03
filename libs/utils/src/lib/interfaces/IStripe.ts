@@ -1,3 +1,3 @@
 export interface IStripe{
-  id: string
+  url: string
 }

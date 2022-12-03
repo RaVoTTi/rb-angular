@@ -1,27 +1,37 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'environments/environment';
 import { IOrder, IResponse, IStripe } from 'libs/utils/src';
 import { firstValueFrom, Observable, switchMap, take } from 'rxjs';
-
+// declare global {
+//   interface Window {
+//     Stripe?: any;
+//   }
+// }
 @Injectable({
   providedIn: 'root',
 })
 export class CheckoutService {
   API_URL = environment.API_URL;
+  private readonly STRIPE!: any;
 
-  constructor(private http: HttpClient, 
-    // private stripeService: StripeService
-    ) {}
+  constructor(
+    private http: HttpClient,
+
+    private router: Router
+  ) {
+    // this.STRIPE = window.Stripe(environment.STRIPE_KEY);
+  }
 
   postMyPlaceOrder(id: string, price: number) {
     return this.http
       .post<IStripe>(`${this.API_URL}/myorder/placeorder/${id}`, { price })
-      // .pipe(
-      //   switchMap(({ id }) => {
-      //     return this.stripeService.redirectToCheckout({ sessionId: id });
-      //   })
-      // );
+      .pipe(
+        switchMap(({ url }) => {
+          return window.location.href = url;
+        })
+      );
   }
   getMyPlaceOrder(id: string): Observable<IResponse<IOrder>> {
     return this.http.get<IResponse<IOrder>>(

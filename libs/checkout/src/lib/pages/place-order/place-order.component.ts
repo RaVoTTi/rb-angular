@@ -16,6 +16,7 @@ import { environment } from 'environments/environment';
 import { CheckoutService } from '../../services/checkout.service';
 import { select, Store } from '@ngrx/store';
 
+
 @Component({
   selector: 'frontend-place-order',
   templateUrl: './place-order.component.html',
@@ -31,9 +32,6 @@ export class PlaceOrderComponent implements OnInit {
   maxPrice!: number;
   init = false;
   price!: number;
-
-  defaultCondition = ORDER_CONDITION[0];
-
   constructor(
     private formBuilder: FormBuilder,
     private location: Location,
@@ -43,7 +41,8 @@ export class PlaceOrderComponent implements OnInit {
     private alertService: AlertService,
     private router: Router,
     private store: Store
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this._getBook();
@@ -82,7 +81,6 @@ export class PlaceOrderComponent implements OnInit {
           }
         }
       );
-    // this.router.navigate([`/checkout/stripe/${this.book._id}`]);
   }
 
   onSubmitCoupon() {
