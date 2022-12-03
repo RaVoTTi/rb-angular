@@ -1,0 +1,35 @@
+<div>
+  <ul class="nav">
+    <ng-container *ngIf="screenWidth > 500">
+      <li>
+        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/app/books">Books</a>
+      </li>
+      <li>
+        <a routerLinkActive="active" routerLink="/app/mylearning"
+          >Learning</a
+        >
+      </li>
+    </ng-container>
+    <ng-container *ngIf="screenWidth > 540">
+      <li>
+        <a routerLinkActive="active" routerLink="/app/books/wishlist"
+          >Wishlist</a
+        >
+      </li>
+    </ng-container>
+    <div
+      class="dropdown-relative"
+      actionOutside
+      (actionOutside)="clickedOutside()"
+    >
+      <div class="pi pi-bars icon" (click)="toggleDropdown()"></div>
+      <div
+        class="dropdown-container"
+        *ngIf="isDropdownOpened"
+        (click)="clickedOutside()"
+      >
+        <frontend-dropdown [items]="getItems()"></frontend-dropdown>
+      </div>
+    </div>
+  </ul>
+</div>

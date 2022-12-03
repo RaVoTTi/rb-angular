@@ -32,6 +32,15 @@
       "checkout": [
         "dist/checkout"
       ],
+      "my-learning": [
+        "dist/my-learning"
+      ],
+      "my-orders": [
+        "dist/my-orders"
+      ],
+      "settings": [
+        "dist/settings"
+      ],
       "test": [
         "dist/test"
       ],

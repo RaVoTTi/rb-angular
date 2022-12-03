@@ -1,0 +1,30 @@
+<div class="search-container">
+  <div class="search">
+    <div
+      class="input-container"
+      (click)="toggleDropdown()"
+      pressEnter
+      actionOutside
+      (actionOutside)="actionOutside()"
+    >
+      <div class="input-split">
+        <input type="text" class="input" 
+         placeholder="Search Books..." 
+        [formControl]="query"
+
+         />
+        <i class=" input-icon"> 🔎</i>
+      </div>
+      <div class="dropdown-relative">
+        <div class="dropdown" *ngIf="isDropdownOpened">
+          <ng-container *ngFor="let item of items$ | async">
+            <div (click)="item.callback()">
+              <i>{{ item.icon }}</i>
+              <h3>{{ item.label | titlecase }}</h3>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

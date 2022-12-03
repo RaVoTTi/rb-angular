@@ -1,16 +1,28 @@
 import { NgModule } from '@angular/core';
-import { AuthUserComponent } from './auth-user.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthViewComponent } from './pages/auth-view/auth-view.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UtilsModule } from 'libs/utils/src';
 
-
-
+const routes: Routes = [
+  {
+    path: '',
+    component: AuthViewComponent,
+  },
+  {
+    path: 'signup',
+    component: AuthViewComponent,
+  },
+];
 @NgModule({
-  declarations: [
-    AuthUserComponent
-  ],
   imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    UtilsModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  exports: [
-    AuthUserComponent
-  ]
+  declarations: [AuthViewComponent],
 })
-export class AuthUserModule { }
+export class AuthUserModule {}
