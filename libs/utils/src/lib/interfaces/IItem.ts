@@ -1,6 +1,7 @@
 export interface IItem{
     label: string,
     icon: string,
-    callback?: any,
+    url?: string,
+    callback?: any;
 
 }

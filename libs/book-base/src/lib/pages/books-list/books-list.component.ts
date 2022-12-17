@@ -36,7 +36,7 @@ export class BooksListComponent implements OnInit {
   reload() {
     this.allBooks$ = this.store.pipe(select(selectAllBooks));
     this.allItems$ = this.store.pipe(
-      select(selectAllBooksAsItems(this.router))
+      select(selectAllBooksAsItems)
     );
   }
   isFavorite(id: string): boolean {

@@ -32,7 +32,7 @@ export class SearchHeaderComponent implements OnInit {
       debounceTime(100),
       distinctUntilChanged()
     ).subscribe(word =>{
-     return this.items$ = this.store.pipe(select(selectSearchItems(this.router, word)))}
+     return this.items$ = this.store.pipe(select(selectSearchItems(word)))}
 
   
     )
@@ -54,5 +54,10 @@ export class SearchHeaderComponent implements OnInit {
   click(url: string) {
     this.router.navigate([url]);
   }
-
+  onClick( callback: any){
+    callback()
+  }
+  redirect(url:string){
+    this.router.navigateByUrl(url)
+  }
 }

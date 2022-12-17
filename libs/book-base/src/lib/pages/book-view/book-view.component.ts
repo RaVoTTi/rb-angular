@@ -16,6 +16,8 @@ import { selectBooksById } from '../../state/books/books.selectors';
 })
 export class BookViewComponent implements OnInit {
   bookId!: string;
+  lastBook!: IBook;
+
 
   constructor(
     private bookBaseService: BookBaseService,
@@ -23,30 +25,21 @@ export class BookViewComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location,
     private store: Store,
+    private router: Router
     
   )
   {}
 
   ngOnInit(): void {
-    this.route.params.pipe(take(1)).subscribe((params) => {
+    this.reload()
+  }
+  reload(){
+    this.route.params.subscribe((params) => {
       if (params['id']) {
         this.bookId = params['id'];
-
-
-        // this.bookBaseService
-        //   .getBookBaseById(this.bookId)
-        //   .pipe(take(1))
-        //   .subscribe(({ result }) => {
-        //     if (result) {
-        //       this.book = result;
-        //     }
-        //   });
       }
     });
   }
-  // reload(){
-
-  // }
 
   back() {
     this.location.back();
@@ -59,7 +52,9 @@ export class BookViewComponent implements OnInit {
     this.store
       .pipe(select(selectBooksById(this.bookId)), take(1))
       .subscribe((book) => (data = book));
-
+    if(!data){
+      this.router.navigateByUrl('/app/books')
+    }
     return data;
   }
 }

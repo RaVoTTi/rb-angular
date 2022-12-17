@@ -35,7 +35,7 @@ export class WishlistComponent implements OnInit {
   reload(){
     this.ids = this.wishlistService.getWishlist().books
     this.wishBooks$ = this.store.select(selectWishBooks(this.ids))
-    this.allItems$ = this.store.select(selectAllBooksAsItems(this.router))
+    this.allItems$ = this.store.select(selectAllBooksAsItems)
 
 
   }

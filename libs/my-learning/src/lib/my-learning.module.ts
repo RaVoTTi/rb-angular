@@ -13,6 +13,7 @@ import { StoreModule } from '@ngrx/store';
 import { myLearningsReducer } from './state/my-learnings.reducer';
 import { MyLearningsEffects } from './state/my-learnings.effects';
 import { UtilsModule } from 'libs/utils/src';
+import { LearningDetailComponent } from './components/learning-detail/learning-detail.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,8 @@ const routes: Routes = [
     UtilsModule,
   ],
   declarations: [
+    LearningDetailComponent,
+
     LearningItemComponent,
     MyLearningListComponent,
     MyLearningViewComponent,

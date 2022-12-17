@@ -21,7 +21,7 @@ export class MyLearningViewComponent  {
     private store: Store,
     private router: Router
   ) {
-    this.route.params.pipe(take(1)).subscribe((params) => {
+    this.route.params.subscribe((params) => {
       if (params['id']) {
         this.store
           .pipe(select(selectMyLearningById(params['id'])))

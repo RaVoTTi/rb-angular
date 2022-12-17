@@ -20,19 +20,19 @@ export const selectBooksById = (id: string) =>
   createSelector(selectBooksEntities, (books) =>
     books[id]
   );
-export const selectAllBooksAsItems = (router:Router) => createSelector(
+export const selectAllBooksAsItems = createSelector(
   selectAllBooks,
   (books) =>
     books.map((book) => {
       return {
         label: book.name,
         icon: '📕',
-        callback: router.navigateByUrl('/app/books/id/' + book._id),
+        url: '/app/books/id/' + book._id,
       };
     }) as IItem[]
 );
-export const selectSearchItems = (router:Router ,word: string | null) =>
-  createSelector(selectAllBooksAsItems(router), (books) => {
+export const selectSearchItems = (word: string | null) =>
+  createSelector(selectAllBooksAsItems, (books) => {
     if (word && word.length > 0) {
       const wordUpper = word.toLowerCase();
       const search = books.filter(({ label }) => {
