@@ -21,7 +21,6 @@ export class CheckoutService {
 
     private router: Router
   ) {
-    // this.STRIPE = window.Stripe(environment.STRIPE_KEY);
   }
 
   postMyPlaceOrder(id: string, price: number) {
