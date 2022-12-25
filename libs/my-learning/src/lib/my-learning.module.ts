@@ -32,10 +32,10 @@ const routes: Routes = [
       orders: MyLearningResolver,
     },
   },
-  {
-    path: 'myevaluation/:id',
-    component: MyEvaluationViewComponent,
-  },
+  // {
+  //   path: 'myevaluation/:id',
+  //   component: MyEvaluationViewComponent,
+  // },
 ];
 @NgModule({
   imports: [
