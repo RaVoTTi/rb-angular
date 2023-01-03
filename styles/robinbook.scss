@@ -1,74 +1,47 @@
 // BASE
-// @import '~normalize.css/normalize.css';
-@use './base/_reset.scss';
-@import  './base/mixins.scss';
+@use "./base/_reset.scss";
+@import "./base/mixins.scss";
 
 // @import './base/fonts.scss';
 // @import './base/configuration.scss';
 
 // LIBRARIES
-@import '~primeicons/primeicons.css';
-// @import '~primeng/resources/themes/saga-orange/theme.css';
-// @import '~primeng/resources/themes/saga-blue/theme.css';
-// @import '~primeng/resources/themes/saga-green/theme.css';
-
-
-// @import '~primeng/resources/themes/fluent-light/theme.css';
-// @import '~primeng/resources/primeng.min.css';
-// @import '~primeflex/primeflex.css';
+@import "~primeicons/primeicons.css";
 
 // PAGES
-@import './apps/robinbook/pages/books-list.scss';
-@import './apps/robinbook/pages/book-view.scss';
 
-@import './apps/robinbook/pages/test.scss';
-@import './apps/robinbook/pages/main.scss';
+@import "./apps/robinbook/pages/main.scss";
 
-@import './apps/robinbook/pages/home.scss';
+@import "./apps/robinbook/pages/home.scss";
 
-@import './libs/auth/auth-page.scss';
-
-
-
+// AUTH
+@import "./libs/auth/auth-page.scss";
 
 // // SHARED
-@import './base/shared/input.scss';
-@import './base/shared/card.scss';
-@import './base/shared/button.scss';
-@import './base/shared/alert.scss';
-@import './base/shared/nothing.scss';
+@import "./base/shared/input.scss";
+@import "./base/shared/card.scss";
+@import "./base/shared/button.scss";
+@import "./base/shared/alert.scss";
+@import "./base/shared/nothing.scss";
+@import "./apps/robinbook/shared/footer.scss";
+@import "./apps/robinbook/shared/header.scss";
+@import "./apps/robinbook/shared/nav.scss";
 
-
-
-
-@import './apps/robinbook/shared/footer.scss';
-
-@import './apps/robinbook/shared/search-header.scss';
-@import './apps/robinbook/shared/header.scss';
-@import './apps/robinbook/shared/nav.scss';
-@import './apps/robinbook/shared/dropdown.scss';
-
-@import './apps/robinbook/shared/loader.scss';
-// @import './libs/order/price.scss';
-
-// COMPONENTS
-// @import './libs/book/item-book.scss';
-@import './libs/book/book-content.scss';
-@import './libs/book/wishlist-icon.scss';
-@import './libs/book/card-book.scss';
-
-@import './libs/checkout/checkout.scss';
-
-
-
-@import './libs/settings/my-settings.scss';
+@import "./libs/settings/my-settings.scss";
 // @import './libs/order/item-learning.scss';
 // @import './libs/order/item-summary.scss';
-@import './libs/order/place-order.scss';
-@import './libs/order/order-list.scss';
+@import "./libs/order/order-list.scss";
 
+// CHECKOUT
+@import "./libs/checkout/place-order.scss";
 
+// BOOK-BASE
+@import "./libs/book-base/book-content.scss";
+@import "./libs/book-base/card-book.scss";
+@import "./libs/book-base/books-list.scss";
+@import "./libs/book-base/book-view.scss";
 
-
-
-
+// UTILS
+@import "./libs/utils/loader.scss";
+@import "./libs/utils/search-header.scss";
+@import "./libs/utils/dropdown.scss";
