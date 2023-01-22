@@ -31,6 +31,7 @@ import { AuthNavbarComponent } from './shared/auth-navbar/auth-navbar.component'
 import { HttpErrorInterceptor, UtilsModule } from 'libs/utils/src';
 import * as fromRoot from './reducers';
 import { environment } from 'environments/environment';
+import { BootNavbarComponent } from './shared/boot-navbar/boot-navbar.component';
 
 const entityMetadata: EntityMetadataMap = {
   Book: {},
@@ -52,6 +53,7 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
     NavbarComponent,
     AuthNavbarComponent,
     MainComponent,
+    BootNavbarComponent,
   ],
   imports: [
     BookBaseModule,

@@ -1,42 +1,72 @@
-<div>
-  <ul class="nav">
-    <ng-container *ngIf="screenWidth > 580">
-      <li><a routerLinkActive="active" routerLink="/app/home">Home</a></li>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/app/home">
+      <img src="assets/img/logo-header.svg" />
+    </a>
 
-      <li><a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/app/books">Books</a></li>
-    </ng-container>
-    <ng-container *ngIf="screenWidth > 768">
-      <li><a routerLinkActive="active" routerLink="/app/books/wishlist">Wishlist</a></li>
-
-
-    </ng-container>
-    <ng-container *ngIf="screenWidth > 700">
-      <div class="login-container">
-        <button class="button-secondary" routerLink="/auth">Login</button>
-      </div>
-    </ng-container>
-    <ng-container *ngIf="screenWidth > 450">
-      <div class="signup-container">
-        <button class="button-primary" routerLink="/auth/signup">
-          Sign Up For Free
-        </button>
-      </div>
-    </ng-container>
-    <ng-container *ngIf="screenWidth < 768">
-      <div
-        class="dropdown-relative"
-        actionOutside
-        (actionOutside)="clickedOutside()"
-      >
-        <div class="pi pi-bars icon" (click)="toggleDropdown()"></div>
-        <div
-          class="dropdown-container"
-          *ngIf="isDropdownOpened"
-          (click)="clickedOutside()"
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" routerLinkActive="active" routerLink="/app/home"
+          >Home</a
         >
-          <!-- <frontend-dropdown [items]="getItems()"></frontend-dropdown> -->
-        </div>
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="/app/books"
+          >Books</a
+        >
+
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          routerLink="/app/books/wishlist"
+          >Wishlist</a
+        >
+        <!-- <ng-container *ngIf="isLoggedIn$ | async">
+      <a
+      class="nav-link"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLink="/app/mylearning"
+        >My Learning</a
+        >
+        
+        <a
+        class="nav-link"
+        routerLinkActive="active"
+        routerLink="/app/myorders"
+        >Orders</a
+        >
+        <a
+        class="nav-link"
+        routerLinkActive="active"
+        routerLink="/app/settings"
+        >Settings</a
+        >
+      </ng-container> -->
       </div>
-    </ng-container>
-  </ul>
-</div>
+      <a
+        routerLink="/auth"
+        class="btn btn-outline-secondary shadow-sm d-sm d-block"
+        >Login</a
+      >
+      <a
+        routerLink="/auth/signup"
+        class="btn btn-primary shadow-sm d-sm d-block"
+        >Sign Up For Free</a
+      >
+    </div>
+  </div>
+</nav>

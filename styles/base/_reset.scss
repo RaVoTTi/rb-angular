@@ -11,19 +11,28 @@
 
 /* Aquí definimos las Custom properties */
 :root {
+  --primary-color: #146356;
+  --primary: #3E7D73;
+  --primary-dark: #146356;
+  --secondary: #B03200;
+
+  --gray-1: #788190;
+  --gray-2: #d3d4db;
+  --white: #ffffff;
+  --body: #fefefe;
+
+
+
+
   --background-color: white;
   --header-color: white;
-  // #F1FFFA
-  // --footer-color: #FEF6C9;
   --point-color: #CAE5FF;
-  // --shaft-color: #FFE8C2;
   --shaft-color: #B08F1A;
   --fletching-color: #B03200;
   --complementary-color: #B03200;
   --stripe-color: #5433FF;
 
   --footer-color: #CCFCCB;
-  --primary-color: #146356;
   --mono-primary-color: #3E7D73;
   --selection-color: #f7a494;
   // --primary-color:#EA7317; //facha
@@ -55,14 +64,15 @@
 
   /* Tipografía */
   // --tipo-principal: Helvetica, Arial, sans-serif;
-  --primary-font: 'Poppins', sans-serif;
+  --primary-font: 'Plus Jakarta', sans-serif;
+  --secondary-font:'Poppins', sans-serif;
+
 
   // --tipo-secundaria: Verdana;
 }
 
 @font-face {
-  font-family: 'Poppins', sans-serif;
-  // src: url('./fonts/');
+  font-family: 'Plus Jakarta', sans-serif;
 }
 /* Las adaptamos al modo oscuro */
 @media (prefers-color-scheme: dark) {
@@ -112,12 +122,12 @@ figure {
 }
 
 /* Reseteamos los enlaces para funcionar como cajas... */
-a {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  font-size: inherit;
-}
+// a {
+//   display: block;
+//   text-decoration: none;
+//   color: inherit;
+//   font-size: inherit;
+// }
 /* ... excepto los que se encuentran en párrafos */
 p a {
   display: inline;
@@ -134,27 +144,27 @@ html {
 }
 
 /* Desactivamos estilos por defecto de las principales etiquetas de texto */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-a,
-strong,
-blockquote,
-i,
-b,
-u,
-em {
-  font-size: 1em;
-  font-weight: inherit;
-  font-style: inherit;
-  text-decoration: none;
-  color: inherit;
-}
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// p,
+// span,
+// a,
+// strong,
+// blockquote,
+// i,
+// b,
+// u,
+// em {
+//   font-size: 1em;
+//   font-weight: inherit;
+//   font-style: inherit;
+//   text-decoration: none;
+//   color: inherit;
+// }
 /* Evitamos problemas con los pseudoelementos de quotes */
 blockquote:before,
 blockquote:after,
@@ -266,3 +276,12 @@ input[type=number] {
 .hidden{
   display: none;
 }
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1296px,
+  xxl: 1400px
+);

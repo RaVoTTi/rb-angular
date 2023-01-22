@@ -93,4 +93,7 @@ export class AuthNavbarComponent implements OnInit {
   clickedOutside(): void {
     this.isDropdownOpened = false;
   }
+  logOut() {
+    this.store.dispatch(AuthActions.logout());
+  }
 }
