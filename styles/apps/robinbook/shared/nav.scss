@@ -102,6 +102,10 @@
   }
 }
 
+
+// .dropdown{
+//   background-color: green;
+// }
 @media screen and (max-width: 992px) {
   .navbar-collapse {
     .btn {
@@ -109,3 +113,5 @@
     }
   }
 }
+
+$dropdown-border-radious:20px;

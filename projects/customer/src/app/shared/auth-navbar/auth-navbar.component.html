@@ -45,37 +45,67 @@
         <a class="nav-link" routerLinkActive="active" routerLink="/app/settings"
           >Settings</a
         >
-        <li class="nav-item dropdown" >
-          <a class="img-user" href="#" id="navbarDropdownMenuLink2" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            <img src="assets/img/icons/icon-footer.svg" class="user user-chip-md bg-default" alt="user-image">
+        <li class="dropdown nav-item" >
+          <a
+            #buttonDropdown
+            id="buttonDropdown"
+            class="img-user "
+            href="#"
+            role="button"
+            data-bs-display="static"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            data-bs-offset="0,200"
+          >
+            <img
+              src="assets/img/icons/icon-footer.svg"
+              class="user user-chip-md bg-default"
+              alt="user-image"
+            />
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-            <div class="row p-2 d-flex align-items-center" style="width: 20rem;">
+          <div
+            #dropdown
+            id="dropdown"
+            class="dropdown-menu dropdown-menu-end"
+            onclick=""
+            aria-labelledby="buttonDropdown"
+          >
+            <div class="row p-2 d-flex align-items-center" style="width: 20rem">
               <div class="col-md-3 col-sm-3 col-3">
-                <img src="assets/images/avatars/avatar-01.svg" class="user user-chip-xxlg bg-default"
-                  alt="user-image">
+                <img
+                  src="assets/images/avatars/avatar-01.svg"
+                  class="user user-chip-xxlg bg-default"
+                  alt="user-image"
+                />
               </div>
               <div class="col-md-9 col-sm-9 col-9">
                 <div class="py-3 ps-3">
                   <div>
-                    <h6 class="text-dark p-0 m-0 text-capitalize"><strong>Alonso Nava</strong></h6>
+                    <h6 class="text-dark p-0 m-0 text-capitalize">
+                      <strong>Alonso Nava</strong>
+                    </h6>
                   </div>
                   <div>
-                    <small class="text-dark text-capitalize">Software developer</small>
+                    <small class="text-dark text-capitalize"
+                      >Software developer</small
+                    >
                   </div>
                 </div>
               </div>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item-user icon-center">
-                <i class="bi bi-person-circle fs-5 text-primary"></i> <span class="ms-4">My Profile</span>
+                <i class="bi bi-person-circle fs-5 text-primary"></i>
+                <span class="ms-4">My Profile</span>
               </li>
               <li class="list-group-item-user icon-center">
-                <i class="bi bi-bag-heart-fill fs-5 text-info"></i> <span class="ms-4">Subscriptions</span>
+                <i class="bi bi-bag-heart-fill fs-5 text-info"></i>
+                <span class="ms-4">Subscriptions</span>
               </li>
-              <li class="list-group-item-user icon-center" >
-                <i class="bi bi-box-arrow-right fs-5 text-danger"></i> <span class="ms-4">Sign out</span>
+              <li><hr class="dropdown-divider"></li>
+              <li class="list-group-item-user icon-center">
+                <i class="bi bi-box-arrow-right fs-5 text-danger"></i>
+                <span class="ms-4">Sign out</span>
               </li>
             </ul>
           </div>

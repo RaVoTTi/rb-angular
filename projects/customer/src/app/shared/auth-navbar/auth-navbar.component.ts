@@ -1,4 +1,12 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostListener,
+  Inject,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import {
   AuthActions,
@@ -7,93 +15,31 @@ import {
 } from 'libs/auth-base/src';
 import { Store } from '@ngrx/store';
 import { IItem } from 'libs/utils/src';
+import { DOCUMENT } from '@angular/common';
 @Component({
   selector: 'robinbook-auth-navbar',
   templateUrl: './auth-navbar.component.html',
 })
-export class AuthNavbarComponent implements OnInit {
-  whislist: IItem[] = [
-    {
-      label: 'Wishlist',
-      icon: '💚',
-      callback: () => {
-        this.router.navigateByUrl('/app/wishlist');
-      },
-    },
-  ];
+export class AuthNavbarComponent implements AfterViewInit{
 
-  primary: IItem[] = [
-    {
-      label: 'Books',
-      icon: '📚',
-      callback: () => {
-        this.router.navigateByUrl('/app/books');
-      },
-    },
-
-    {
-      label: 'My Learning',
-      icon: '📝',
-      callback: () => {
-        this.router.navigateByUrl('/app/mylearning');
-      },
-    },
-  ];
-  secondary: IItem[] = [
-    {
-      label: 'Orders',
-      icon: '💵',
-      callback: () => {
-        this.router.navigateByUrl('/app/myorders');
-      },
-    },
-
-    {
-      label: 'Settings',
-      icon: '🧰',
-      callback: () => {
-        this.router.navigateByUrl('/app/settings');
-      },
-    },
-
-    {
-      label: 'Log Out',
-      icon: '🚪',
-      callback: () => {
-        this.store.dispatch(AuthActions.logout());
-      },
-    },
-  ];
   screenWidth: any;
 
   isDropdownOpened = false;
 
-  constructor(private router: Router, private store: Store) {}
+  constructor(
+    private router: Router,
+    private store: Store,
+  ) {
 
-  ngOnInit(): void {
-    this.screenWidth = window.innerWidth;
+    
   }
-  @HostListener('window:resize', ['$event'])
-  onWindowResize() {
-    this.screenWidth = window.innerWidth;
+  ngAfterViewInit(): void {
+
+   
+
+ 
   }
 
-  getItems(): IItem[] {
-    if (this.screenWidth < 500) {
-      return this.primary.concat(this.whislist, this.secondary);
-    } else if (this.screenWidth < 540) {
-      return this.whislist.concat(this.secondary);
-    }
+ 
 
-    return this.secondary;
-  }
-  toggleDropdown(): void {
-    this.isDropdownOpened = !this.isDropdownOpened;
-  }
-  clickedOutside(): void {
-    this.isDropdownOpened = false;
-  }
-  logOut() {
-    this.store.dispatch(AuthActions.logout());
-  }
 }
