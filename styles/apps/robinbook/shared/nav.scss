@@ -74,7 +74,7 @@
 .navbar {
   border: 1px solid var(--gray-2);
   width: 100%;
-  padding: auto;
+  padding: 0.5rem;
   background-color: var(--white);
   top: 0;
   position: fixed;
@@ -83,10 +83,12 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
+
   // padding: 10px 16px;
 }
 
-.nav-link {
+.nav-link, .list-group-item-user{
+  cursor: pointer;
   margin: 5px 5px 5px 10px;
   font-size: 18px;
   color: var(--gray-1);
@@ -102,16 +104,31 @@
   }
 }
 
-
+@media screen and (max-width: 365px) {
+  .navbar-brand {
+    img{
+      padding: auto;
+      max-height: 40px;
+    }
+  }
+}
+.user-icon{
+  width: 100px;
+}
+.auth-user-container{
+  width: 100%;
+  height: max-content;
+  padding: 1rem;
+}
 // .dropdown{
 //   background-color: green;
 // }
 @media screen and (max-width: 992px) {
   .navbar-collapse {
     .btn {
-      margin: 1rem .5rem;
+      margin: 1rem 0.5rem;
     }
   }
 }
 
-$dropdown-border-radious:20px;
+$dropdown-border-radius: 20px;

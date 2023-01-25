@@ -20,7 +20,7 @@ import { DOCUMENT } from '@angular/common';
   selector: 'robinbook-auth-navbar',
   templateUrl: './auth-navbar.component.html',
 })
-export class AuthNavbarComponent implements AfterViewInit{
+export class AuthNavbarComponent {
 
   screenWidth: any;
 
@@ -33,11 +33,10 @@ export class AuthNavbarComponent implements AfterViewInit{
 
     
   }
-  ngAfterViewInit(): void {
 
-   
 
- 
+  logOut(){
+    this.store.dispatch(AuthActions.logout());
   }
 
  
