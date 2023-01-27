@@ -1,18 +1,18 @@
-<div class="search-container">
-  <div class="search">
-    <div
+<section class="search">
+  <!-- <div class="search">
+      <div
       class="input-container"
       (click)="toggleDropdown()"
       pressEnter
       actionOutside
       (actionOutside)="actionOutside()"
-    >
+      >
       <div class="input-split">
         <input type="text" class="input" 
-         placeholder="Search Books..." 
+        placeholder="Search Books..." 
         [formControl]="query"
-
-         />
+        
+        />
         <i class=" input-icon"> </i>
       </div>
       <div class="dropdown-relative">
@@ -26,5 +26,66 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </div> -->
+
+  <nav class="navbar">
+    <div class="container-fluid">
+      <!-- <div class="input-group flex-nowrap">
+        <input type="text" class="form-control" placeholder="Search Books" aria-label="Username" aria-describedby="addon-wrapping">
+        <span class="input-group-text btn btn-secondary" id="addon-wrapping">Search</span>
+      </div> -->
+      <li class="dropdown">
+        <div
+          class="input-group"
+          data-bs-display="static"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          id="searchDropdown"
+        >
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Username"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          [formControl]="query"
+        />
+          <span class="input-group-text" id="basic-addon1">@</span>
+        </div>
+        <div
+          id="dropdown"
+          class="dropdown-menu"
+          style="width: 100%"
+          onclick=""
+          aria-labelledby="searchDropdown"
+        >
+          <ul class="list-group">
+
+
+            <a *ngFor="let item of items$| async" (click)="redirect(item.url!)" class="list-group-item list-group-item-action" >
+              {{ item.label | titlecase }}
+            </a>
+
+          </ul>
+        </div>
+      </li>
+      <!-- <form class="d-flex" role="search">
+
+        <div class="dropdown">
+          <input
+            class="form-control me-2"
+            id="searchDropdown"
+            type="search"
+            role="button"
+            placeholder="Search"
+            aria-label="Search"
+            data-bs-display="static"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          />
+          
+        <button class="btn btn-outline-secondary" type="submit">Search</button>
+      </form> -->
+    </div>
+  </nav>
+</section>

@@ -44,19 +44,7 @@ export class SearchHeaderComponent implements OnInit {
   //   // console.log(value)
   // }
 
-  toggleDropdown() {
-    this.isDropdownOpened = !this.isDropdownOpened;
-  }
 
-  actionOutside() {
-    this.isDropdownOpened = false;
-  }
-  click(url: string) {
-    this.router.navigate([url]);
-  }
-  onClick( callback: any){
-    callback()
-  }
   redirect(url:string){
     this.router.navigateByUrl(url)
   }

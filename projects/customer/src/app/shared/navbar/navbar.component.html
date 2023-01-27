@@ -1,40 +1,41 @@
-<nav class="navbar navbar-expand-lg d-sm-block">
-  <div class="container-fluid ">
-    <a class="navbar-brand" routerLink="/app/home">
-      <img src="assets/img/logo-header.svg" />
-    </a>
+<section class="header">
+  <nav class="navbar navbar-expand-lg d-sm-block">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/app/home">
+        <img src="assets/img/logo-header.svg" />
+      </a>
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" routerLinkActive="active" routerLink="/app/home"
-          >Home</a
-        >
-        <a
-          class="nav-link"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          routerLink="/app/books"
-          >Books</a
-        >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" routerLinkActive="active" routerLink="/app/home"
+            >Home</a
+          >
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLink="/app/books"
+            >Books</a
+          >
 
-        <a
-          class="nav-link"
-          routerLinkActive="active"
-          routerLink="/app/books/wishlist"
-          >Wishlist</a
-        >
-        <!-- <ng-container *ngIf="isLoggedIn$ | async">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            routerLink="/app/books/wishlist"
+            >Wishlist</a
+          >
+          <!-- <ng-container *ngIf="isLoggedIn$ | async">
       <a
       class="nav-link"
         routerLinkActive="active"
@@ -56,17 +57,18 @@
         >Settings</a
         >
       </ng-container> -->
+        </div>
+        <a
+          routerLink="/auth"
+          class="btn btn-outline-secondary shadow-sm d-sm d-block"
+          >Login</a
+        >
+        <a
+          routerLink="/auth/signup"
+          class="btn btn-primary shadow-sm d-sm d-block"
+          >Sign Up For Free</a
+        >
       </div>
-      <a
-        routerLink="/auth"
-        class="btn btn-outline-secondary shadow-sm d-sm d-block"
-        >Login</a
-      >
-      <a
-        routerLink="/auth/signup"
-        class="btn btn-primary shadow-sm d-sm d-block"
-        >Sign Up For Free</a
-      >
     </div>
-  </div>
-</nav>
+  </nav>
+</section>

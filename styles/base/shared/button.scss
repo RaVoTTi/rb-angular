@@ -74,6 +74,7 @@
 }
 
 .btn {
+  font-weight: 600;
   border-radius: 8px;
 }
 .btn-primary,
@@ -89,8 +90,19 @@
   background-color: var(--primary-dark);
 }
 
+.btn-secondary {
+  border: none;
+  background-color: var(--secondary);
+}
+.btn-secondary:hover {
+  background-color: var(--secondary);
+}
+
+
+
 .btn-outline-secondary {
   border: 1px solid var(--gray-2);
+  background-color: var(--body);
   color: var(--black);
   &:hover , &:focus{
     background-color: var(--gray-2);
