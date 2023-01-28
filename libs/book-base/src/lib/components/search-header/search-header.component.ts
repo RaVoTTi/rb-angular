@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
- import { select, Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { IItem } from 'libs/utils/src';
 import {
   debounceTime,
@@ -11,7 +11,10 @@ import {
   Observable,
   tap,
 } from 'rxjs';
-import { selectAllBooksAsItems, selectSearchItems } from '../../state/books/books.selectors';
+import {
+  selectAllBooksAsItems,
+  selectSearchItems,
+} from '../../state/books/books.selectors';
 
 @Component({
   selector: 'frontend-search-header',
@@ -23,29 +26,23 @@ export class SearchHeaderComponent implements OnInit {
 
   // @Output() public enter = new EventEmitter();
   query = new FormControl('');
-  books$! : Observable<IItem[]>
+  books$!: Observable<IItem[]>;
   isDropdownOpened = false;
 
-  constructor(private router: Router,
-    private store: Store) {
-    this.query.valueChanges.pipe(
-      debounceTime(100),
-      distinctUntilChanged()
-    ).subscribe(word =>{
-     return this.items$ = this.store.pipe(select(selectSearchItems(word)))}
-
-  
-    )
+  constructor(private router: Router, private store: Store) {
+    this.query.valueChanges
+      .pipe(debounceTime(100), distinctUntilChanged())
+      .subscribe((word) => {
+        return (this.items$ = this.store.pipe(select(selectSearchItems(word ?? ''))));
+      });
   }
-  ngOnInit()  {
-  }
+  ngOnInit() {}
   // search( value : string){
   //   this.items$ = this.store.pipe(select(selectSearchItems(value)))
   //   // console.log(value)
   // }
 
-
-  redirect(url:string){
-    this.router.navigateByUrl(url)
+  redirect(url: string) {
+    this.router.navigateByUrl(url);
   }
 }

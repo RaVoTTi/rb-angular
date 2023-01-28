@@ -55,17 +55,6 @@ section.search .navbar {
   min-width: 250px;
   margin-top: 1em;
   height: 80px;
-  background: var(--primary-color);
-  background: -webkit-linear-gradient(
-    to top,
-    var(--primary-color),
-    var(--mono-primary-color)
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    var(--primary-color),
-    var(--mono-primary-color)
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   box-shadow: var(--header-shadow);
 
@@ -82,4 +71,10 @@ section.search .dropdown-menu{
 }
 section.search .list-group{
   border-radius: 8px;
+}
+// section.search ut-group{
+//   border-radius: 50rem;
+// }
+section.search .list-group-item-action{
+  cursor: pointer;
 }

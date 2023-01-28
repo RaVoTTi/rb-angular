@@ -35,13 +35,36 @@
         <span class="input-group-text btn btn-secondary" id="addon-wrapping">Search</span>
       </div> -->
       <li class="dropdown">
-        <div
-          class="input-group"
-          data-bs-display="static"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-          id="searchDropdown"
+
+      <div class="input-group"
+      data-bs-display="static"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+      id="searchDropdown"
+      >
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+        [formControl]="query"
+      />
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          id="button-addon1"
         >
+          Search
+        </button>
+      </div>
+      <!-- <div
+        class="input-group"
+        data-bs-display="static"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        id="searchDropdown"
+      >
         <input
           type="text"
           class="form-control"
@@ -50,9 +73,9 @@
           aria-describedby="basic-addon1"
           [formControl]="query"
         />
-          <span class="input-group-text" id="basic-addon1">@</span>
-        </div>
-        <div
+        <span class="input-group-text" id="basic-addon1">@</span>
+      </div> -->
+      <div
           id="dropdown"
           class="dropdown-menu"
           style="width: 100%"
@@ -60,12 +83,13 @@
           aria-labelledby="searchDropdown"
         >
           <ul class="list-group">
-
-
-            <a *ngFor="let item of items$| async" (click)="redirect(item.url!)" class="list-group-item list-group-item-action" >
+            <a
+              *ngFor="let item of (items$ | async)"
+              (click)="redirect(item.url!)"
+              class="list-group-item list-group-item-action"
+            >
               {{ item.label | titlecase }}
             </a>
-
           </ul>
         </div>
       </li>

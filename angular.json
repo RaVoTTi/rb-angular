@@ -3,7 +3,6 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-
     "admin": {
       "projectType": "application",
       "schematics": {
@@ -21,18 +20,14 @@
             "outputPath": "dist/admin",
             "index": "projects/admin/src/index.html",
             "main": "projects/admin/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/admin/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/admin/src/favicon.ico",
               "projects/admin/src/assets"
             ],
-            "styles": [
-              "projects/admin/src/styles.scss"
-            ],
+            "styles": ["projects/admin/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -83,19 +78,14 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/admin/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/admin/src/favicon.ico",
               "projects/admin/src/assets"
             ],
-            "styles": [
-              "projects/admin/src/styles.scss"
-            ],
+            "styles": ["projects/admin/src/styles.scss"],
             "scripts": []
           }
         }
@@ -118,19 +108,18 @@
             "outputPath": "dist/customer",
             "index": "projects/customer/src/index.html",
             "main": "projects/customer/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/customer/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/customer/src/favicon.ico",
+              "projects/customer/src/assets/favicon.svg",
               "projects/customer/src/assets"
+
             ],
-            "styles": [
-              "projects/customer/src/styles.scss"
-            ],
-            "scripts": []
+            "styles": ["projects/customer/src/styles.scss"],
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -186,19 +175,14 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/customer/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               "projects/customer/src/favicon.ico",
               "projects/customer/src/assets"
             ],
-            "styles": [
-              "projects/customer/src/styles.scss"
-            ],
+            "styles": ["projects/customer/src/styles.scss"],
             "scripts": []
           }
         }
@@ -229,10 +213,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "libs/auth-base/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
@@ -262,10 +243,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "libs/auth-user/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
@@ -295,10 +273,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "libs/book-base/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
@@ -328,10 +303,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "libs/checkout/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
@@ -361,10 +333,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "libs/utils/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
@@ -394,10 +363,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "libs/my-learning/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
@@ -427,10 +393,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "libs/my-orders/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
@@ -460,10 +423,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "libs/settings/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
