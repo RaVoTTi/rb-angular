@@ -1,163 +1,162 @@
 <section class="header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid flex-sm-wrap d-sm-flex">
+      <a class="navbar-brand" routerLink="/app/home">
+        <img src="assets/img/logo-header.svg" />
+      </a>
 
-<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid flex-sm-wrap d-sm-flex">
-    <a class="navbar-brand" routerLink="/app/home">
-      <img src="assets/img/logo-header.svg" />
-    </a>
-
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav ms-auto">
-        <div class="row p-2 d-flex align-items-center d-block d-lg-none">
-          <div class="col-md-3 col-sm-3 col-3">
-            <img
-              src="assets/img/icons/icon-footer.svg"
-              class="user-icon"
-              alt="user-image"
-            />
-          </div>
-          <div class="col-md-9 col-sm-9 col-9">
-            <div class="py-3 ps-3">
-              <div>
-                <h6 class="text-dark p-0 m-0 text-capitalize">
-                  <strong>Hi, outlaw!</strong>
-                </h6>
-              </div>
-              <div>
-                <small class="text-dark text-capitalize"
-                  >Software developer</small
-                >
-              </div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+          <div class="row p-2 d-flex align-items-center d-block d-lg-none">
+            <div class="col-md-3 col-sm-3 col-3">
+              <img
+                src="assets/img/icons/icon-footer.svg"
+                class="user-icon"
+                alt="user-image"
+              />
             </div>
-          </div>
-        </div>
-        <a
-          class="nav-link"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          routerLink="/app/books"
-          >Books</a
-        >
-
-        <a
-          class="nav-link"
-          routerLinkActive="active"
-          routerLink="/app/books/wishlist"
-          >Wishlist</a
-        >
-        <a
-          class="nav-link"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          routerLink="/app/mylearning"
-          >My Learning</a
-        >
-
-        <a
-          class="nav-link d-block d-lg-none"
-          routerLinkActive="active"
-          routerLink="/app/myorders"
-          >Orders</a
-        >
-        <a
-          class="nav-link d-block d-lg-none"
-          routerLinkActive="active"
-          routerLink="/app/settings"
-          >Settings</a
-        >
-        <li class="dropdown ms-2 nav-item d-none d-lg-block">
-          <a
-
-            id="buttonDropdown"
-            class="img-user"
-            href="#"
-            role="button"
-            data-bs-display="static"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            data-bs-offset="0,200"
-          >
-            <img
-              src="assets/img/icons/icon-footer.svg"
-              class="user user-chip-md bg-default"
-              alt="user-image"
-            />
-          </a>
-          <div
-            #dropdown
-            id="dropdown"
-            class="dropdown-menu dropdown-menu-end"
-            onclick=""
-            aria-labelledby="buttonDropdown"
-          >
-            <div class="row p-2 d-flex align-items-center" style="width: 20rem">
-              <div class="col-md-3 col-sm-3 col-3">
-                <img
-                  src="assets/img/icons/icon-footer.svg"
-                  class="user user-chip-xxlg bg-default"
-                  alt="user-image"
-                />
-              </div>
-              <div class="col-md-9 col-sm-9 col-9">
-                <div class="py-3 ps-3">
-                  <div>
-                    <h6 class="text-dark p-0 m-0 text-capitalize">
-                      <strong>Alonso Nava</strong>
-                    </h6>
-                  </div>
-                  <div>
-                    <small class="text-dark text-capitalize"
-                      >Software developer</small
-                    >
-                  </div>
+            <div class="col-md-9 col-sm-9 col-9">
+              <div class="py-3 ps-3">
+                <div>
+                  <h6 class="text-dark p-0 m-0 text-capitalize">
+                    <strong>Hi, outlaw!</strong>
+                  </h6>
+                </div>
+                <div>
+                  <small class="text-dark text-capitalize"
+                    >Software developer</small
+                  >
                 </div>
               </div>
             </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item-user icon-center">
-                <span
-                  class="ms-1"
-                  routerLinkActive="active"
-                  routerLink="/app/myorders"
-                  >Orders</span
-                >
-              </li>
-              <li class="list-group-item-user icon-center">
-                <span
-                  class="ms-1"
-                  routerLinkActive="active"
-                  routerLink="/app/settings"
-                  >Settings</span
-                >
-              </li>
-              <li><hr class="dropdown-divider" /></li>
-              <li
-                (click)="logOut()" class="list-group-item-user icon-center btn btn-outline-danger me-3"
-              >
-                <span class="">Log out</span>
-              </li>
-            </ul>
           </div>
-        </li>
-      </div>
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLink="/app/books"
+            >Books</a
+          >
 
-      <a
-        (click)="logOut()"
-        class="btn btn-outline-danger shadow-sm d-block d-lg-none"
-        >Log Out</a
-      >
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            routerLink="/app/books/wishlist"
+            >Wishlist</a
+          >
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLink="/app/mylearning"
+            >My Learning</a
+          >
+
+          <a
+            class="nav-link d-block d-lg-none"
+            routerLinkActive="active"
+            routerLink="/app/myorders"
+            >Orders</a
+          >
+          <a
+            class="nav-link d-block d-lg-none"
+            routerLinkActive="active"
+            routerLink="/app/settings"
+            >Settings</a
+          >
+          <li class="dropdown ms-2 nav-item d-none d-lg-block">
+            <a
+              id="buttonDropdown"
+              class="img-user"
+              href="#"
+              role="button"
+              data-bs-display="static"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              data-bs-offset="0,200"
+            >
+              <img
+                src="assets/img/icons/icon-footer.svg"
+                class="user user-chip-md bg-default"
+                alt="user-image"
+              />
+            </a>
+            <div
+              #dropdown
+              id="dropdown"
+              class="dropdown-menu dropdown-menu-end"
+              onclick=""
+              aria-labelledby="buttonDropdown"
+            >
+              <div
+                class="row p-2 d-flex align-items-center"
+                style="width: 20rem"
+              >
+                <div class="col-md-3 col-sm-3 col-3">
+                  <img
+                    src="assets/img/icons/icon-footer.svg"
+                    class="user user-chip-xxlg bg-default"
+                    alt="user-image"
+                  />
+                </div>
+                <div class="col-md-9 col-sm-9 col-9">
+                  <div class="py-3 ps-3">
+                    <div>
+                      <h6 class="text-dark p-0 m-0 text-capitalize">
+                        <strong>Alonso Nava</strong>
+                      </h6>
+                    </div>
+                    <div>
+                      <small class="text-dark text-capitalize"
+                        >Software developer</small
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item-user icon-center">
+                  <span
+                    class="ms-1"
+                    routerLinkActive="active"
+                    routerLink="/app/myorders"
+                    >Orders</span
+                  >
+                </li>
+                <li class="list-group-item-user icon-center">
+                  <span
+                    class="ms-1"
+                    routerLinkActive="active"
+                    routerLink="/app/settings"
+                    >Settings</span
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                  <button class="btn btn-outline-danger me-3" (click)="logOut()" >
+                    Log Out
+                  </button>
+              </ul>
+            </div>
+          </li>
+        </div>
+
+        <a
+          (click)="logOut()"
+          class="btn btn-outline-danger shadow-sm d-block d-lg-none"
+          >Log Out</a
+        >
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 </section>

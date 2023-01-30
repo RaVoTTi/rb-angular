@@ -33,7 +33,7 @@ export class SearchHeaderComponent implements OnInit {
     this.query.valueChanges
       .pipe(debounceTime(100), distinctUntilChanged())
       .subscribe((word) => {
-        return (this.items$ = this.store.pipe(select(selectSearchItems(word ?? ''))));
+        return (this.search(word ?? ''));
       });
   }
   ngOnInit() {}
@@ -41,6 +41,10 @@ export class SearchHeaderComponent implements OnInit {
   //   this.items$ = this.store.pipe(select(selectSearchItems(value)))
   //   // console.log(value)
   // }
+  search(word: string){
+    this.items$ = this.store.pipe(select(selectSearchItems(word)))
+  }
+
 
   redirect(url: string) {
     this.router.navigateByUrl(url);

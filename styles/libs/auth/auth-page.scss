@@ -1,6 +1,7 @@
 .auth-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   margin: 0 auto;
   padding: 1rem 0;
@@ -10,10 +11,12 @@
 
   & .auth-in {
     width: 100%;
-    height: max-content;
     padding: 1rem;
+    
     background-color: white;
-    border-radius: 3rem;
+    box-shadow: var(--input-shadow);
+    border: 1px solid #efefef;
+    border-radius: 20px;
     & .auth-logo {
       & .logo {
         width: 150px;
@@ -23,15 +26,25 @@
     }
   }
   & .auth-card {
-    & .auth-alert {
+    // form{
+    //   flex-direction: column;
+    //   display: flex;
 
+    //   width: 100%;
+    //   align-items: center;
+    //   div{
+    //     width: 100%;
+    //   }
+    // }
+
+    & .auth-alert {
       border-radius: 20px;
       // box-shadow: -2px 5px 20px 0 rgb(173 173 173 / 19%);
-      margin: .5rem 0;
+      margin: 0.5rem 0;
       display: flex;
       align-items: center;
       i {
-        margin-right: .5rem;
+        margin-right: 0.5rem;
         font-size: 2rem;
       }
       p {
@@ -41,7 +54,7 @@
         font-weight: 500;
       }
     }
-    & .auth-check{
+    & .auth-check {
       display: flex;
       justify-content: flex-start;
       margin-top: 1rem;
@@ -51,11 +64,11 @@
         margin: 0px 5px;
       }
       a {
-      color: var(--primary-color);
-      font-weight: 400;
-      &:hover{
-        color: var(--complementary-color);
-      }
+        color: var(--primary-color);
+        font-weight: 400;
+        &:hover {
+          color: var(--complementary-color);
+        }
       }
     }
     & .details {
@@ -65,17 +78,14 @@
       font-size: 1rem;
       padding: 0.4em;
       color: var(--primary-color);
-        span{
-            font-weight: 400;
-            color: var(--gray-color);
-            font-size: 0.6rem;
-            margin-right: 5px;
-        }
+      span {
+        font-weight: 400;
+        color: var(--gray-color);
+        font-size: 0.6rem;
+        margin-right: 5px;
+      }
     }
-    
-    & .button-container {
-      height: 40px;
-      margin-top: 2rem;
-    }
+
+
   }
 }

@@ -7,17 +7,22 @@
   <div class="text-container">
     <h2>{{ book?.name | uppercase }}</h2>
     <h4>{{ book?.minPrice | currency }} - {{ book?.maxPrice | currency }}</h4>
-    <h3>{{ 'By ' + book?.autor?.name | titlecase }}</h3>
+    <h3>{{ book?.autor?.name | titlecase }}</h3>
     <span>#{{ book?.subject?.name | uppercase }}</span>
-    <div class="buttons-container">
-      <div class="button-container">
-        <button class="button-primary" (click)="toCheckOut()">Buy Now</button>
-      </div>
-      <div class="button-container">
-        <button class="button-secondary" (click)="addBookToWishlist()">
-          To Wishlist
-        </button>
-      </div>
+    <div class=" ">
+      <button
+        class="col-12 m-2 col-md-5 col btn btn-primary"
+        style=""
+        (click)="toCheckOut()"
+      >
+        Buy Now
+      </button>
+      <button
+        class="col-12 m-2 col-md-5 btn btn-outline-secondary"
+        (click)="addBookToWishlist()"
+      >
+        To Wishlist
+      </button>
     </div>
   </div>
 </div>

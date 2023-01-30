@@ -57,24 +57,29 @@ section.search .navbar {
   height: 80px;
 
   box-shadow: var(--header-shadow);
-
-
+  background: var(--primary);
 }
 
-section.search .btn-outline-secondary{
+section.search .btn-outline-secondary {
   padding: 6px 10px;
   font-weight: 400;
 }
 
-section.search .dropdown-menu{
-  padding: 0px;
-}
-section.search .list-group{
-  border-radius: 8px;
-}
 // section.search ut-group{
 //   border-radius: 50rem;
 // }
-section.search .list-group-item-action{
+section.search .list-group-item-action {
   cursor: pointer;
 }
+
+section.search .input-group {
+  .form-control, .btn {
+    border-radius: 50vh;
+    box-shadow: none;
+    // padding-left: 5px;
+    // padding-right: 5px;
+
+  }
+
+}
+

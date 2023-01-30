@@ -1,29 +1,27 @@
 <div class="auth-container">
   <div class="auth-in">
-    <div class="auth-logo">
+    <a class="auth-logo">
       <img
         class="logo"
-        src="assets/word@2x.png"
+        src="assets/img/logo-header.svg"
         alt=""
         routerLink="/app/books"
       />
-    </div>
-    
+    </a>
 
     <div class="auth-card" *ngIf="loginForm; else signup">
       <div class="auth-alert">
-        <i>🏹</i> 
+        <i>🏹</i>
         Enter your details below to continue
-       
       </div>
-      <form [formGroup]="loginForm" autocomplete="off">
+      <form class="" [formGroup]="loginForm" autocomplete="off">
         <div class="input-label">
           <label class="label"> Email</label>
           <input
             placeholder="robin@boook.com"
             formControlName="email"
             type="text"
-            class="input"
+            class="form-control"
           />
           <small [errorMsg]="errorMsg('email')"> </small>
         </div>
@@ -33,32 +31,50 @@
             type="password"
             placeholder="*********"
             formControlName="password"
-            class="input"
+            class="form-control"
           />
           <small [errorMsg]="errorMsg('password')"> </small>
         </div>
-        <div class="auth-check">
-          <input
-          class="input-checkbox"
-          id="flexCheckDefault"
+        <div class="d-flex justify-content-between m-2">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              Remember Me
+            </label>
+          </div>
 
-          type="checkbox"
-          />
-          <label> Remember Me</label>
+          <a routerLink="/auth/signup"> Forgot Password? </a>
         </div>
 
-
-
-        <div class="button-container">
-          <button class="button-primary" (click)="onSubmit()"
+        <!-- <button
+          class="btn btn-primary"
+          (click)="onSubmit()"
           [disabled]="loginForm.invalid || loginForm.disabled"
-          
-          >LOGIN</button>
+        >
+          Login
+        </button> -->
+        <div class="row mb-3 mt-3">
+          <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+            <button
+              type="submit"
+              class="btn btn-primary btn-block"
+              (click)="onSubmit()"
+              [disabled]="loginForm.invalid || loginForm.disabled"
+            >
+              <span class="spinner-border spinner-border-sm mr-1"></span> Start
+              Now
+            </button>
+          </div>
         </div>
-        <div class="details">
-          <span>New to Robin Boook?</span>
+        <div class="d-flex justify-content-evenly">
+          <span>Don't have account</span>
 
-          <a routerLink="/auth/signup"> Sign up Now </a>
+          <a routerLink="/auth/signup"> Create account </a>
         </div>
       </form>
     </div>
@@ -77,7 +93,7 @@
           placeholder="Robin"
           formControlName="name"
           type="text"
-          class="input"
+          class="form-control"
         />
         <small [errorMsg]="errorMsg('name')"> </small>
       </div>
@@ -87,7 +103,7 @@
           type="text"
           placeholder="Boook"
           formControlName="lastName"
-          class="input"
+          class="form-control"
         />
         <small [errorMsg]="errorMsg('lastName')"> </small>
       </div>
@@ -97,7 +113,7 @@
           placeholder="robin@boook.com"
           formControlName="email"
           type="text"
-          class="input"
+          class="form-control"
         />
         <small [errorMsg]="errorMsg('email')"> </small>
       </div>
@@ -107,7 +123,7 @@
           type="number"
           placeholder="(111) 111-1111"
           formControlName="phone"
-          class="input"
+          class="form-control"
         />
         <small [errorMsg]="errorMsg('phone')"> </small>
       </div>
@@ -117,7 +133,7 @@
           type="password"
           placeholder="********"
           formControlName="password"
-          class="input"
+          class="form-control"
         />
         <small [errorMsg]="errorMsg('password')"> </small>
       </div>
@@ -127,31 +143,47 @@
           type="password"
           placeholder="********"
           formControlName="password2"
-          class="input"
+          class="form-control"
         />
         <small [errorMsg]="errorMsg('password2')"> </small>
       </div>
-      <div class="auth-check">
+
+
+      <div class="form-check m-2">
         <input
-        formControlName="terms"
-        type="checkbox"
-        class="input-radio"
+          class="form-check-input"
+          type="checkbox"
+          formControlName="terms"
+
+          value=""
+          id="flexCheckDefault"
         />
-        <b>Accept </b> <a href="">Terms & Conditions</a>
+        <label class="form-check-label" for="flexCheckDefault">
+          Accept <a href="">Terms & Conditions</a>
+        </label>
+      </div>
+      <div class="row mb-3 mt-3">
+        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+          <button
+            type="submit"
+            class="btn btn-primary btn-block"
+            (click)="onSubmit()"
+            [disabled]="signUpForm.invalid || signUpForm.disabled"
+          >
+            <span class="spinner-border spinner-border-sm mr-1"></span> Create
+            Account
+          </button>
+        </div>
       </div>
 
-      <div class="button-container">
-        <button class="button-primary" 
-        [disabled]="signUpForm.invalid || signUpForm.disabled"
-        
-        (click)="onSubmit()">SIGN UP</button>
-      </div>
-      <div class="details">
-        <span>Already have an account?</span>
-        <a routerLink="/auth"> Login Now </a>
+      <div class="row mb-5">
+        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+          <span class="text-xs text-muted me-3">Already have an account?</span>
+          <a routerLink="/auth"
+            ><span class="text-xs text-primary fw-bold">Login Now </span></a
+          >
+        </div>
       </div>
     </form>
-
-
   </div>
 </ng-template>

@@ -93,6 +93,10 @@ section.header .nav-link, .list-group-item-user{
   font-size: 18px;
   color: var(--gray-1);
 }
+section.header .nav-link:hover, .list-group-item-user:hover{
+
+  color: var(--black);
+}
 
 section.header .navbar-nav .nav-link.active {
   font-weight: bold;
@@ -131,4 +135,3 @@ section.header .auth-user-container{
   }
 }
 
-$dropdown-border-radius: 20px;

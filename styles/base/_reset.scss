@@ -13,10 +13,9 @@
 :root {
   --primary-color: #146356;
   --primary: #3E7D73;
-  --primary-dark: #146356;
+  --mono-primary: #3E7D73;
   --secondary:#d3d4db;
-  --secondary-dark:#A2A2A8;
-
+  --selection-color: #f7a494;
   
   
   
@@ -27,21 +26,25 @@
   --gray-2: #d3d4db;
   --white: #ffffff;
   --body: #fefefe;
+  // --body: red;
 
 
+ 
+--bs-body-font-family: 'Plus Jakarta', sans-serif;
+--bs-body-font-size: 1rem;
+--bs-body-font-weight: 400;
+// --bs-body-line-height: 
+// --bs-body-color:
+  
 
-  --selection-color: #f7a494;
   // --primary-color:#EA7317; //facha
   // #73BFB8
   --secondary-color: #f2fbe0;
   --third-color: #020122;
   // --complementary-color: #cc2936;
   --light-gray-color: #E3E2EC;
+  // --light-gray-color: red;
 
-  --gradient-old: var(--primary-color)
-  --gradient-webkit: -webkit-linear-gradient(to top, var(--primary-color), var(--mono-primary-color))/* Chrome 10-25, Safari 5.1-6 */  
-  --gradient:  linear-gradient(to top, var(--primary-color), var(--mono-primary-color)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
-  
 
  
   
@@ -223,6 +226,7 @@ body {
   // /* opcional */
   min-width: 250px;
   line-height: 1.4em;
+  background-color: var(--body);
   // /* opcional */
   // // hyphens: auto;
   // /* opcional */
@@ -259,6 +263,8 @@ input[type=number] {
 ::-webkit-scrollbar-track {
   // box-shadow: inset 0 0 5px grey;
   background: var(--background-color);
+//  background: red;
+
 
 }
 
@@ -273,13 +279,4 @@ input[type=number] {
   display: none;
 }
 
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1296px,
-  xxl: 1400px
-);
-
-
+ 

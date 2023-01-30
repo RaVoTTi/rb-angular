@@ -34,31 +34,47 @@
         <input type="text" class="form-control" placeholder="Search Books" aria-label="Username" aria-describedby="addon-wrapping">
         <span class="input-group-text btn btn-secondary" id="addon-wrapping">Search</span>
       </div> -->
-      <li class="dropdown">
 
-      <div class="input-group"
-      data-bs-display="static"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-      id="searchDropdown"
-      >
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Username"
-        aria-label="Username"
-        aria-describedby="basic-addon1"
-        [formControl]="query"
-      />
-        <button
-          class="btn btn-outline-secondary"
-          type="button"
-          id="button-addon1"
+      <li class="dropdown col-12 col-sm-6 col-md-4 ">
+        <div
+          class="input-group" 
+          data-bs-display="static"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          id="searchDropdown"
+          style="width: 100%"
         >
-          Search
-        </button>
-      </div>
-      <!-- <div
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="basic-addon1"
+            [formControl]="query"
+            (pressEnter)="search(query.value ?? '')"
+            (click)="search(query.value ?? '')"
+          />
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-addon1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- <div
         class="input-group"
         data-bs-display="static"
         data-bs-toggle="dropdown"
@@ -75,21 +91,23 @@
         />
         <span class="input-group-text" id="basic-addon1">@</span>
       </div> -->
-      <div
+        <div
           id="dropdown"
           class="dropdown-menu"
           style="width: 100%"
           onclick=""
           aria-labelledby="searchDropdown"
         >
-          <ul class="list-group">
-            <a
-              *ngFor="let item of (items$ | async)"
-              (click)="redirect(item.url!)"
-              class="list-group-item list-group-item-action"
+          <ul class="list-group list-group-flush">
+            <li
+              *ngFor="let item of items$ | async"
+              class="list-group-item-user icon-center"
+              
             >
-              {{ item.label | titlecase }}
-            </a>
+              <span (click)="redirect(item.url!)" class="">
+                {{ item.label | titlecase }}
+              </span>
+            </li>
           </ul>
         </div>
       </li>
