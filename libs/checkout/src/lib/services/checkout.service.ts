@@ -23,9 +23,9 @@ export class CheckoutService {
   ) {
   }
 
-  postMyPlaceOrder(id: string, price: number) {
+  postMyPlaceOrder(id: string) {
     return this.http
-      .post<IStripe>(`${this.API_URL}/myorder/placeorder/${id}`, { price })
+      .post<IStripe>(`${this.API_URL}/myorder/placeorder/${id}`, {  })
       .pipe(
         switchMap(({ url }) => {
           return window.location.href = url;

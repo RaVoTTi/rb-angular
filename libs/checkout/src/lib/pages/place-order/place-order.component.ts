@@ -65,12 +65,12 @@ export class PlaceOrderComponent implements OnInit {
     });
   }
   onSubmit() {
-    if (this.orderForm.invalid) {
-      this.orderForm.markAllAsTouched();
-      return;
-    }
+    // if (this.orderForm.invalid) {
+    //   this.orderForm.markAllAsTouched();
+    //   return;
+    // }
     this.checkoutService
-      .postMyPlaceOrder(this.id, this.price)
+      .postMyPlaceOrder(this.id)
       .subscribe(
         error => {
           if(error){

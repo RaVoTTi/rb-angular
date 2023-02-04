@@ -7,7 +7,6 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { PressEnterDirective } from './directives/press-enter.directive';
 import { ErrorImageDirective } from './directives/error-image.directive';
 import { NothingComponent } from './components/nothing/nothing.component';
-import { LogoHeaderComponent } from './components/logo-header/logo-header.component';
 @NgModule({
   imports: [CommonModule, ],
   declarations: [
@@ -18,7 +17,6 @@ import { LogoHeaderComponent } from './components/logo-header/logo-header.compon
     ActionOutsideDirective,
     PressEnterDirective,
     NothingComponent,
-    LogoHeaderComponent,
 
   ],
   exports: [
@@ -29,7 +27,6 @@ import { LogoHeaderComponent } from './components/logo-header/logo-header.compon
     ErrorMsgDirective,
     ActionOutsideDirective,
     NothingComponent,
-    LogoHeaderComponent,
 
 
   ],

@@ -30,7 +30,7 @@ export class BookDetailComponent implements OnInit {
   toCheckOut() {
     if(this.book){
 
-    this.router.navigateByUrl(`checkout/placeorder/${this.book._id}`);
+    this.router.navigateByUrl(`/app/checkout/placeorder/${this.book._id}`);
     }
   }
   addBookToWishlist() {

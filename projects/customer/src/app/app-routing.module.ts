@@ -46,7 +46,7 @@ const routes: Routes = [
           books: BooksResolver,
         },
       },
-      
+
       {
         path: 'mylearning',
         loadChildren: () =>
@@ -62,7 +62,13 @@ const routes: Routes = [
       {
         path: 'settings',
         loadChildren: () =>
-        import('libs/settings/src').then((m) => m.SettingsModule),
+          import('libs/settings/src').then((m) => m.SettingsModule),
+        canActivate: [IsLoggedIn],
+      },
+      {
+        path: 'checkout',
+        loadChildren: () =>
+          import('libs/checkout/src').then((m) => m.CheckoutModule),
         canActivate: [IsLoggedIn],
       },
       {
@@ -80,12 +86,7 @@ const routes: Routes = [
       import('libs/auth-user/src').then((m) => m.AuthUserModule),
     canActivate: [IsLoggedOut],
   },
-  {
-    path: 'checkout',
-    loadChildren: () =>
-      import('libs/checkout/src').then((m) => m.CheckoutModule),
-    canActivate: [IsLoggedIn],
-  },
+
   {
     path: '**',
     redirectTo: '/app/books',
@@ -106,13 +107,14 @@ export class AppRoutingModule {}
 // },
 function matcherFunction(url: UrlSegment[]) {
   if (url.length == 1) {
-      const path = url[0].path;
-       if(path.startsWith('mylearning') 
-         || path.startsWith('mylearning/success') 
-         || path.startsWith('books/cancel')
-         ){
-        return {consumed: url};
-      }
+    const path = url[0].path;
+    if (
+      path.startsWith('mylearning') ||
+      path.startsWith('mylearning/success') ||
+      path.startsWith('books/cancel')
+    ) {
+      return { consumed: url };
+    }
   }
   return null;
 }
