@@ -5,6 +5,7 @@ import {
   BooksResolver,
   BookViewComponent,
   WishlistComponent,
+  TermsComponent
 } from 'libs/book-base/src';
 import { HomeComponent } from './pages/home/home.component';
 import { MainComponent } from './shared/main/main.component';
@@ -45,6 +46,11 @@ const routes: Routes = [
         resolve: {
           books: BooksResolver,
         },
+      },
+      {
+        path: 'terms',
+        component: TermsComponent,
+
       },
 
       {

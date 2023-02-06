@@ -28,6 +28,7 @@ import { SearchHeaderComponent } from './components/search-header/search-header.
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UtilsModule } from 'libs/utils/src';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
+import { TermsComponent } from './pages/terms/terms.component';
 // import { WishResolver } from './services/wish.resolver';
 // import { BookEffects } from './state/books.effects';
 
@@ -79,10 +80,11 @@ import { BookDetailComponent } from './components/book-detail/book-detail.compon
     BooksListComponent,
     BookViewComponent,
     BookDetailComponent,
+    TermsComponent
   ],
   exports: [
     SearchHeaderComponent,
-
+    TermsComponent,
     WishlistIconComponent,
     CardBookComponent,
     BooksListComponent,
