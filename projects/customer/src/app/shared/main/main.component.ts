@@ -18,8 +18,11 @@ export class MainComponent {
       )
       .subscribe(
         (event: NavigationEnd) => {
-          event.url.includes('home' || 'settings' || 'myorders' || 'checkout' || 'terms')
-
+          event.url.includes('home') ||
+          event.url.includes('settings') ||
+          event.url.includes('myorders') ||
+          event.url.includes('checkout') ||
+          event.url.includes('terms')
             ? (this.home = true)
             : (this.home = false);
         }
