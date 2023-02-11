@@ -1,0 +1,22 @@
+section.sub-nav .navbar {
+  width: 100%;
+  min-width: 250px;
+  margin-top: 1em;
+  height: 80px;
+  box-shadow: var(--header-shadow);
+  background: var(--primary);
+}
+section.sub-nav .rb-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  color: var(--secondary);
+  cursor: pointer;
+
+
+}
+section.sub-nav .rb-container:hover{
+  color:white;
+  font-weight: 800;
+}

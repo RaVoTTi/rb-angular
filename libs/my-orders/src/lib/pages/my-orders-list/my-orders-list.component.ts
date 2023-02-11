@@ -22,7 +22,7 @@ import { MyOrdersService } from '../../services/my-orders.service';
 
   ngOnInit(): void {
     this.myOrdersService
-    .getMyOrders(0)
+    .getMyOrders()
     .pipe(take(1))
     .subscribe(({result}) => {
       if(result){

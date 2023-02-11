@@ -9,26 +9,7 @@
   padding: 1em;
   font-family: var(--primary-font);
 
-  gap: 1em;
 
-  & .back-icon {
-    color: var(--gray-color);
-    display: flex;
-    width: fit-content;
-    height: fit-content;
-    flex-direction: row;
-    align-items: center;
-
-    font-family: var(--primary-font);
-    cursor: pointer;
-    & i {
-      font-size: 1.5em;
-    }
-
-    &:hover {
-      color: var(--complementary-color);
-    }
-  }
 
   & .book-view {
     // flex-wrap: wrap;

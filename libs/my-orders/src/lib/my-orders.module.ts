@@ -5,6 +5,7 @@ import { MyOrdersListComponent } from './pages/my-orders-list/my-orders-list.com
 import { MyOrderViewComponent } from './pages/my-order-view/my-order-view.component';
 import { MyOrdersResolver } from './services/my-orders.resolver';
 import { BooksResolver } from 'libs/book-base/src';
+import { UtilsModule } from 'libs/utils/src';
 const routes: Routes = [
   {
     path: '',
@@ -23,7 +24,7 @@ const routes: Routes = [
   },
 ];
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule,UtilsModule, RouterModule.forChild(routes)],
   declarations: [MyOrdersListComponent, MyOrderViewComponent],
 })
 export class MyOrdersModule {}

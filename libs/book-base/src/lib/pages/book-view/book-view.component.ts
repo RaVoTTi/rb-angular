@@ -37,6 +37,7 @@ export class BookViewComponent implements OnInit {
     this.route.params.subscribe((params) => {
       if (params['id']) {
         this.bookId = params['id'];
+        console.log(this.bookId)
       }
     });
   }

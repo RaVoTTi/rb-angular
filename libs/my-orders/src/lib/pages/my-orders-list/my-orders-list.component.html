@@ -1,4 +1,4 @@
-<div class="order-list-container">
+<!-- <div class="order-list-container">
   <div class="card-summary">
     <div class="card-header">
       <h3>Orders</h3>
@@ -22,4 +22,36 @@
       </tr>
     </table>
   </div>
+</div> -->
+<frontend-sub-nav title="Orders"></frontend-sub-nav>
+<section class="order">
+  <div class="container-fluid">
+    <div class="order-table">
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Order id</th>
+          <th>Name</th>
+          <th *ngIf="screenWidth > 700">Date</th>
+          <th>Condition</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>
+            <a [routerLink]="['/app/myorders/id/', order._id]">{{ order._id.slice(-10) }} </a>
+          </td>
+          <td>{{ order.book.name | titlecase }}</td>
+          <td *ngIf="screenWidth > 700">{{ order.dateCreated | date}}</td>
+          <td>{{order.condition | titlecase}} </td>
+          <td>{{ order.price | currency }}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
 </div>
+
+</section>

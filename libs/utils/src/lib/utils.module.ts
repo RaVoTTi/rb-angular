@@ -7,6 +7,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { PressEnterDirective } from './directives/press-enter.directive';
 import { ErrorImageDirective } from './directives/error-image.directive';
 import { NothingComponent } from './components/nothing/nothing.component';
+import { SubNavComponent } from './components/sub-nav/sub-nav.component';
 @NgModule({
   imports: [CommonModule, ],
   declarations: [
@@ -17,6 +18,8 @@ import { NothingComponent } from './components/nothing/nothing.component';
     ActionOutsideDirective,
     PressEnterDirective,
     NothingComponent,
+    SubNavComponent,
+
 
   ],
   exports: [
@@ -27,6 +30,8 @@ import { NothingComponent } from './components/nothing/nothing.component';
     ErrorMsgDirective,
     ActionOutsideDirective,
     NothingComponent,
+    SubNavComponent,
+
 
 
   ],

@@ -11,7 +11,10 @@ export class MyOrdersService {
   API_URL = environment.API_URL;
 
   constructor(private http: HttpClient) {}
-  getMyOrders(condition: number): Observable<IResponse<IOrder[]>> {
+  getMyOrders(): Observable<IResponse<IOrder[]>> {
     return this.http.get<IResponse<IOrder[]>>(`${this.API_URL}/myorder`);
+  }
+  getMyOrderById(id:string): Observable<IResponse<IOrder>> {
+    return this.http.get<IResponse<IOrder>>(`${this.API_URL}/myorder/${id}`);
   }
 }
