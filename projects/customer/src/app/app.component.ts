@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+  NavigationCancel,
+  NavigationEnd,
+  NavigationError,
+  NavigationStart,
+  Router,
+} from '@angular/router';
 import {
   AuthActions,
   AuthBaseService,
@@ -18,7 +24,9 @@ export class AppComponent implements OnInit {
     private router: Router,
     private localStorageService: LocalStorageService,
     private store: Store<AppState>
-  ) {}
+  ) {
+
+  }
   ngOnInit(): void {
     const token = this.localStorageService.getToken();
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { filter } from 'rxjs';
 
 @Component({
@@ -8,6 +8,7 @@ import { filter } from 'rxjs';
 })
 export class MainComponent {
   home!: boolean;
+  loading = false;
 
   constructor(private router: Router) {
     this.router.events
@@ -29,5 +30,17 @@ export class MainComponent {
 
         // url.
       );
+    this.router.events.subscribe((ev) => {
+      if (ev instanceof NavigationStart) {
+        this.loading = true;
+      }
+      if (
+        ev instanceof NavigationEnd ||
+        ev instanceof NavigationError ||
+        ev instanceof NavigationCancel
+      ) {
+        this.loading = false;
+      }
+    });
   }
 }

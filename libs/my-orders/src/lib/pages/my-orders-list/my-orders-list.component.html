@@ -26,7 +26,7 @@
 <frontend-sub-nav title="Orders"></frontend-sub-nav>
 <section class="order">
   <div class="container-fluid">
-    <div class="order-table">
+    <div class="order-table" *ngIf="orders">
 
     <table class="table table-striped">
       <thead>
@@ -52,6 +52,7 @@
       </tbody>
     </table>
   </div>
+  <frontend-spinner *ngIf="!orders"></frontend-spinner>
 </div>
 
 </section>

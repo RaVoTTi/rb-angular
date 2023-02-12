@@ -21,7 +21,6 @@ export class MyOrderViewComponent implements OnInit {
     this.route.params.subscribe((params) => {
       if (params['id']) {
         this.orderId = params['id'];
-        console.log(this.orderId);
       }
     });
     this.myOrdersService
@@ -30,7 +29,6 @@ export class MyOrderViewComponent implements OnInit {
       .subscribe(({ result }) => {
         if (result) {
           this.order = result;
-        console.log( this.order);
 
         }
       });

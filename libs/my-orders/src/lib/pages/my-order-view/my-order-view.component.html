@@ -1,9 +1,7 @@
 <frontend-sub-nav title="Receipt"></frontend-sub-nav>
 <section class="order">
   <div class="container-fluid">
-    <h2></h2>
-
-    <div class="order-table">
+    <div class="order-table" *ngIf="order">
       <div class="d-flex flex-column">
         <div class="col-6 col-md-4 mt-2">
           <img src="assets/img/logo-header.svg" />
@@ -32,15 +30,15 @@
               <tbody>
                 <tr>
                   <th>Date:</th>
-                  <td>{{order?.dateCreated | date}}</td>
+                  <td>{{order.dateCreated | date}}</td>
                 </tr>
                 <tr>
                   <th>Order#:</th>
-                  <td>{{order?._id }}</td>
+                  <td>{{order._id }}</td>
                 </tr>
                 <tr>
                   <th>Sold To:</th>
-                  <td>{{order?.user?.lastName |titlecase }}, {{order?.user?.name |titlecase }}</td>
+                  <td>{{order.user.lastName |titlecase }}, {{order.user.name |titlecase }}</td>
                 </tr>
               </tbody>
             </table>
@@ -65,11 +63,11 @@
         </thead> -->
           <tbody>
             <tr>
-              <td>{{order?.book?.name | titlecase}} (Summarized)</td>
-              <td>{{order?.dateCreated | date}}</td>
+              <td>{{order.book.name | titlecase}} (Summarized)</td>
+              <td>{{order.dateCreated | date}}</td>
               <td class="d-md-table-cell d-none " >1</td>
-              <td>US{{order?.price | currency }} </td>
-              <td>US{{order?.price  | currency }} </td>
+              <td>US{{order.price | currency }} </td>
+              <td>US{{order.price  | currency }} </td>
               
 
 
@@ -91,11 +89,12 @@
               <th class="d-md-table-cell d-none "  colspan="3"></th>
               <th class="d-table-cell d-md-none "  colspan="2"></th>
               <th>Total Paid</th>
-              <th>US{{order?.price  | currency }} </th>
+              <th>US{{order.price  | currency }} </th>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
+    <frontend-spinner *ngIf="!order"></frontend-spinner>
   </div>
 </section>

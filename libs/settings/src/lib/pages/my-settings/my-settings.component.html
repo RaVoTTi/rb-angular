@@ -1,145 +1,84 @@
-<div class="settings-container">
-  <div class="card-form-container">
-    <div class="card-header">
-      <h3>Email</h3>
-    </div>
-    <div class="form-container" autocomplete="off">
+<frontend-sub-nav title="Settings"></frontend-sub-nav>
+
+<div class="container-fluid">
+  <div class="rb-card mt-4 mb-4">
+    <form autocomplete="off">
+      <div class="input-label">
+        <label class="label"> Name</label>
+        <input
+        readonly
+          placeholder="Robin"
+          type="text"
+          class="form-control"
+        />
+        <!-- <small [errorMsg]="errorMsg('name')"> </small> -->
+      </div>
+      <div class="input-label">
+        <label class="label"> LastName</label>
+        <input
+        readonly
+          type="text"
+          placeholder="Boook"
+          class="form-control"
+        />
+        <!-- <small [errorMsg]="errorMsg('lastName')"> </small> -->
+      </div>
       <div class="input-label">
         <label class="label"> Email</label>
-        <input placeholder="robin@boook.com"  type="text" class="input" />
+        <input
+        readonly
+          placeholder="robin@boook.com"
+          [formControl]="emailForm"
+          type="text"
+          class="form-control"
+        />
+        <!-- <small [errorMsg]="errorMsg('email')"> </small> -->
       </div>
-
-      <div class="button-container">
-        <button class="button-primary" (click)="onSubmit()">MODIFY</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="card-form-container">
-    <div class="card-header">
-      <h3>Phone</h3>
-    </div>
-    <div class="form-container" autocomplete="off">
       <div class="input-label">
         <label class="label"> Phone</label>
-        <input type="number" placeholder="(111) 111-1111" class="input" />
+        <input
+        readonly
+          type="number"
+          placeholder="(111) 111-1111"
+          [formControl]="phoneForm"
+          class="form-control"
+        />
+        <!-- <small [errorMsg]="errorMsg('phone')"> </small> -->
       </div>
-      <div class="button-container">
-        <button class="button-primary" (click)="onSubmit()">MODIFY</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="card-form-container">
-    <div class="card-header">
-      <h3>Password</h3>
-    </div>
-
-    <div class="form-container" autocomplete="off">
       <div class="input-label">
         <label class="label"> Password</label>
-        <input type="password" placeholder="********" class="input" />
+        <input
+        readonly
+          type="password"
+          placeholder="********"
+          class="form-control"
+        />
+        <!-- <small [errorMsg]="errorMsg('password')"> </small> -->
       </div>
       <div class="input-label">
         <label class="label">Confirm Password</label>
-        <input type="password" placeholder="********" class="input" />
+        <input
+        readonly
+          type="password"
+          placeholder="********"
+          class="form-control"
+        />
+        <!-- <small [errorMsg]="errorMsg('password2')"> </small> -->
       </div>
 
-      <div class="button-container">
-        <button class="button-primary" (click)="onSubmit()">MODIFY</button>
+     
+      <div class="row mb-3 mt-3">
+        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+          <button
+            class="btn btn-primary btn-block"
+          >
+            <span class="spinner-border spinner-border-sm mr-1"></span> Modify Account
+          </button>
+        </div>
       </div>
-    </div>
+
+
+    </form>
   </div>
-</div>
-
-<!-- <div class="settings-container">
-
-  <div class="card-form-container">
-    <div class="card-header">
-    <h3>Email</h3>
-  </div>
-  <div class="form-container" [formControl]="emailForm" autocomplete="off">
-    
-    <div class="input-label">
-      <label class="label"> Email</label>
-      <input
-        placeholder="robin@boook.com"
-        [formControl]="emailForm"
-        type="text"
-        class="input"
-      />
-    </div>
-    <div class="button-container">
-      <button class="button-primary" 
-      [disabled]="emailForm.invalid || emailForm.disabled"
-      
-      (click)="onSubmit()">MODIFY</button>
-    </div>
-
-  </form>
-</div>
-
-  <div class="card-form-container">
-    <div class="card-header">
-    <h3>Phone</h3>
-  </div>
-<div class="form-container" [formControl]="phoneForm" autocomplete="off">
-  <div class="input-label">
-    <label class="label"> Phone</label>
-    <input
-      type="number"
-      placeholder="(111) 111-1111"
-      [formControl]="phoneForm"
-      class="input"
-    />
-  </div>
-  <div class="button-container">
-    <button class="button-primary" 
-    [disabled]="phoneForm.invalid || phoneForm.disabled"
-    
-    (click)="onSubmit()">MODIFY</button>
-  </div>
-
-</form>
-</div>
-
-
-  <div class="card-form-container">
-    <div class="card-header">
-    <h3>Password</h3>
-  </div>
-
-  <div class="form-container" [formGroup]="passwordForm" autocomplete="off">
-  
-
-    <div class="input-label">
-      <label class="label"> Password</label>
-      <input
-        type="password"
-        placeholder="********"
-        formControlName="password"
-        class="input"
-      />
-    </div>
-    <div class="input-label">
-      <label class="label">Confirm Password</label>
-      <input
-        type="password"
-        placeholder="********"
-        formControlName="password2"
-        class="input"
-      />
-    </div>
-  
-  
-    <div class="button-container">
-      <button class="button-primary" 
-      [disabled]="passwordForm.invalid || passwordForm.disabled"
-      
-      (click)="onSubmit()">MODIFY</button>
-    </div>
-  
-  </form>
 
 </div>
-</div> -->
