@@ -10,6 +10,6 @@ export class ErrorImageDirective {
   defaultImage(){
     
     const element =  this.elementRef.nativeElement
-    element.src = '../assets/home-image.png'
+    element.src = "assets/img/icons/icon-footer.svg"
   }
 }
