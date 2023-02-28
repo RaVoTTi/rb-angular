@@ -1,4 +1,4 @@
-@use '../../base/mixins.scss';
+// @use '../../base/mixins.scss';
 
 .book-view-container {
   max-width: 81em;
@@ -26,10 +26,10 @@
 
     // @include breakpoint(sm){
     // };
-    @include breakpoint(md) {
-      flex-direction: row;
-      justify-content: space-around;
-    }
+    // @include breakpoint(md) {
+    //   flex-direction: row;
+    //   justify-content: space-around;
+    // }
 
     & .image-container {
       // max-width: 30em;
@@ -45,9 +45,9 @@
         border-radius: 20px;
         max-width: 250px;
         object-fit: cover;
-        @include breakpoint(md) {
-          max-width: 350px;
-        }
+        // @include breakpoint(md) {
+        //   max-width: 350px;
+        // }
       }
     }
 
@@ -58,9 +58,9 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      @include breakpoint(md) {
-        margin-left: 2em;
-      }
+      // @include breakpoint(md) {
+      //   margin-left: 2em;
+      // }
       & h2 {
         margin-top: 1em;
         font-size: 2em;
@@ -107,16 +107,16 @@
         margin: 0 auto;
 
 
-        @include breakpoint(md) {
-          flex-direction: row;
-        }
+        // @include breakpoint(md) {
+        //   flex-direction: row;
+        // }
         & .button-container {
           min-width: 200px;
           height: 40px;
           min-height: 40px;
-          @include breakpoint(md) {
-            flex-direction: row;
-          }
+          // @include breakpoint(md) {
+          //   flex-direction: row;
+          // }
         }
       }
     }

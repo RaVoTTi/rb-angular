@@ -1,8 +1,9 @@
 // @import "node_modules/bootstrap/scss/bootstrap";
 // @import "node_modules/bootstrap/dist/css/bootstrap.css";
-// @import "/node_modules/bootstrap/scss/bootstrap.scss";
+// @import "node_modules/bootstrap/scss/functions";
+
 $grid-breakpoints: (
-  xs: 0,
+    xs: 0,
   sm: 576px,
   md: 768px,
   lg: 992px,
@@ -10,22 +11,42 @@ $grid-breakpoints: (
   xxl: 1400px
 );
 
-
-
-
 $primary: #3e7d73;
 $secondary: #d3d4db;
-// $success :
-// $info :
-// $warning :
 $danger: #b03200;
-// $light :
-// $dark :
+
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  
+  "danger": $danger
+  );
 
 // BUTTONS
 $btn-padding-y: 12px;
 $btn-padding-x: 20px;
 $btn-font-weight: 600;
+
+
+// DROPDOWN
+$dropdown-border-radius: 20px;
+$dropdown-padding-y: 1rem;
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+// // 3. Include remainder of required Bootstrap stylesheets
+// @import "node_modules/bootstrap/scss/variables";
+// @import "node_modules/bootstrap/scss/mixins";
+
+// // 4. Include any optional Bootstrap components as you like
+// @import "node_modules/bootstrap/scss/root";
+// @import "node_modules/bootstrap/scss/maps";
+
+// @import "node_modules/bootstrap/scss/reboot";
+// @import "node_modules/bootstrap/scss/type";
+// @import "node_modules/bootstrap/scss/images";
+// @import "node_modules/bootstrap/scss/containers";
+// @import "node_modules/bootstrap/scss/grid";
 
 // // BUTTON
 
@@ -153,8 +174,4 @@ $btn-font-weight: 600;
 // $input-height-lg:                       add($input-line-height * 1em, add($input-padding-y-lg * 2, $input-height-border, false));
 
 // $input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-
-
-// DROPDOWN
-$dropdown-border-radius: 20px;
-$dropdown-padding-y: 1rem;
+@import "node_modules/bootstrap/scss/grid";
