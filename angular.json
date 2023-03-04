@@ -115,12 +115,9 @@
               "projects/customer/src/assets/favicon.svg",
               "projects/customer/src/assets"
             ],
-            "styles": [
-              "projects/customer/src/styles.scss"
-              
-            ],
+            "styles": ["projects/customer/src/styles.scss"],
             "scripts": [
-
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
 
             ]
           },
