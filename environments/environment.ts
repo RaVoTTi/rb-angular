@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  API_URL: 'http://localhost:8081/api/v1',
-  RAW_URL: 'http://localhost:8081',
+  API_URL: 'http://localhost:8080/api/v1',
+  RAW_URL: 'http://localhost:8080',
   result: 'zi4jba#cxlkNMzI',
 };
 
