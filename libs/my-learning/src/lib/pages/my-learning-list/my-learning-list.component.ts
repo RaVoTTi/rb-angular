@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { selectAllBooks, selectBooksById } from 'libs/book-base/src';
 import { select, Store } from '@ngrx/store';
-import { AlertService, IBook, IItem, ILearning, IOrder } from 'libs/utils/src';
+import { IBook, IItem, ILearning, IOrder } from 'libs/utils/src';
 import { Observable, take } from 'rxjs';
 import { MyLearningService } from '../../services/my-learning.service';
 import {
@@ -20,7 +20,7 @@ export class MyLearningListComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private alertService: AlertService,
+    // private alertService: AlertService,
     private route: ActivatedRoute,
     private store: Store
   ) {}
@@ -31,29 +31,29 @@ export class MyLearningListComponent implements OnInit {
 
       if (state) {
         if (state === 'success') {
-          this.alertService.fire(
-            {
-              title: 'Your purchased was succesful!!',
-              text: 'Enjoy your summarise..',
-              icon: 'success',
-            },
-            {
-              urlConfi: '/app/mylearning', // 🔴 TODOOO
-              urlCancel: '/app/mylearning',
-            }
-          );
+          // this.alertService.fire(
+          //   {
+          //     title: 'Your purchased was succesful!!',
+          //     text: 'Enjoy your summarise..',
+          //     icon: 'success',
+          //   },
+          //   {
+          //     urlConfi: '/app/mylearning', // 🔴 TODOOO
+          //     urlCancel: '/app/mylearning',
+          //   }
+          // );
         } else if (state === 'fail') {
-          this.alertService.fire(
-            {
-              title: 'The payment was unsuccesful!! ',
-              text: 'Check your card or try again',
-              icon: 'error',
-            },
-            {
-              urlConfi: '/app/mylearning', // 🔴 TODOOO
-              urlCancel: '/app/mylearning',
-            }
-          );
+          // this.alertService.fire(
+          //   {
+          //     title: 'The payment was unsuccesful!! ',
+          //     text: 'Check your card or try again',
+          //     icon: 'error',
+          //   },
+          //   {
+          //     urlConfi: '/app/mylearning', // 🔴 TODOOO
+          //     urlCancel: '/app/mylearning',
+          //   }
+          // );
         }
       }
     });

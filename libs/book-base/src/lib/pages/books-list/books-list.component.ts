@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of, take, takeLast } from 'rxjs';
-import { AlertService, IBook, IItem } from 'libs/utils/src';
+import {  IBook, IItem } from 'libs/utils/src';
 import { WishlistService } from '../../services/wishlist.service';
 import { select, Store } from '@ngrx/store';
 import {
@@ -24,7 +24,7 @@ export class BooksListComponent implements OnInit {
     private router: Router,
 
     private wishlistService: WishlistService,
-    private alertService: AlertService
+    // private alertService: AlertService
   ) {}
 
   ngOnInit(): void {

@@ -12,7 +12,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { MyLearningService } from '../../services/my-learning.service';
-import { AlertService } from 'libs/utils/src';
+// import { AlertService } from 'libs/utils/src';
 import { select, Store } from '@ngrx/store';
 import { selectMyLearningById } from '../../state/my-learnings.selectors';
 
@@ -28,7 +28,7 @@ export class MyEvaluationViewComponent implements OnInit {
     private location: Location,
     private formBuilder: FormBuilder,
     private router: Router,
-    private alert: AlertService,
+    // private alert: AlertService,
     private store: Store
   ) {}
 
@@ -72,27 +72,27 @@ export class MyEvaluationViewComponent implements OnInit {
 
   onSubmit() {
     if (this.evaluationForm.invalid) {
-      this.alert.fire(
-        {
-          text: 'The answers are incorrect',
-          icon: 'error',
-        },
-        {
-          urlConfi: `/app/mylearning/${this.learning._id}`,
-          urlCancel: `/app/mylearning/${this.learning._id}`,
-        }
-      );
+      // this.alert.fire(
+      //   {
+      //     text: 'The answers are incorrect',
+      //     icon: 'error',
+      //   },
+      //   {
+      //     urlConfi: `/app/mylearning/${this.learning._id}`,
+      //     urlCancel: `/app/mylearning/${this.learning._id}`,
+      //   }
+      // );
     } else {
-      this.alert.fire(
-        {
-          text: 'Congratulations',
-          icon: 'error',
-        },
-        {
-          urlConfi: `/app/mylearning/${this.learning._id}`,
-          urlCancel: `/app/mylearning/${this.learning._id}`,
-        }
-      );
+      // this.alert.fire(
+      //   {
+      //     text: 'Congratulations',
+      //     icon: 'error',
+      //   },
+      //   {
+      //     urlConfi: `/app/mylearning/${this.learning._id}`,
+      //     urlCancel: `/app/mylearning/${this.learning._id}`,
+      //   }
+      // );
       // this.myLearningService
       //   .getEvaluationConfirm(this.orderId)
       //   .pipe(take(1))

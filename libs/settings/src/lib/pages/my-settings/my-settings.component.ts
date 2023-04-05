@@ -7,7 +7,6 @@ import {
   Validators,
 } from '@angular/forms';
 import {
-  AlertService,
   ErrorHandlerService,
   ValidatorsService,
 } from 'libs/utils/src';
@@ -27,21 +26,21 @@ export class MySettingsComponent implements OnInit {
     private errorH: ErrorHandlerService,
     private formBuilder: FormBuilder,
     private vs: ValidatorsService,
-    private alert: AlertService
+    // private alert: AlertService
   ) {}
 
   ngOnInit(): void {
-    this.alert.fire(
-      {
-        title: 'Something when wrong',
-        text: "We'll get it fixed as soon as we can",
-        icon: 'error',
-      },
-      {
-        urlConfi: '/app/books', // 🔴 TODOOO
-        urlCancel: '/app/books',
-      }
-    );
+    // this.alert.fire(
+    //   {
+    //     title: 'Something when wrong',
+    //     text: "We'll get it fixed as soon as we can",
+    //     icon: 'error',
+    //   },
+    //   {
+    //     urlConfi: '/app/books', // 🔴 TODOOO
+    //     urlCancel: '/app/books',
+    //   }
+    // );
     // this._initForm();
   }
 
