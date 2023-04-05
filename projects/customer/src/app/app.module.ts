@@ -32,6 +32,8 @@ import { HttpErrorInterceptor, UtilsModule } from 'libs/utils/src';
 import * as fromRoot from './reducers';
 import { environment } from 'environments/environment';
 import { BootNavbarComponent } from './shared/boot-navbar/boot-navbar.component';
+import { ComponentStore } from '@ngrx/component-store';
+import { ComponentsModule } from 'libs/components/src';
 
 const entityMetadata: EntityMetadataMap = {
   Book: {},
@@ -61,6 +63,7 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    ComponentsModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
