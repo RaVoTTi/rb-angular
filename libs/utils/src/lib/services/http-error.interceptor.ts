@@ -28,17 +28,17 @@ export class HttpErrorInterceptor implements HttpInterceptor {
         }
 
         // aquí podrías agregar código que muestre el error en alguna parte fija de la pantalla.
-        this.alert.fire(
-          {
-            title: errorMessage,
-            text: 'Or try later',
-            icon: 'error',
-          },
-          {
-            urlConfi: '/app/books', // 🔴 TODOOO
-            urlCancel: '/app/books',
-          }
-        );
+        // this.alert.fire(
+        //   {
+        //     title: errorMessage,
+        //     text: 'Or try later',
+        //     icon: 'error',
+        //   },
+        //   {
+        //     urlConfi: '/app/books', // 🔴 TODOOO
+        //     urlCancel: '/app/books',
+        //   }
+        // );
         return throwError(() => Error(errorMessage));
       })
     );

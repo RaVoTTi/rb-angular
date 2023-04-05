@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import Swal, { SweetAlertOptions } from 'sweetalert2';
+// import Swal, { SweetAlertOptions } from 'sweetalert2';
 
 interface IRoutes {
   urlConfi?: string;
@@ -12,19 +12,19 @@ interface IRoutes {
   providedIn: 'root',
 })
 export class AlertService {
-  swalCustom = Swal.mixin({
-    customClass: {
-      container: '',
-      popup: 'alert-popup',
-      title: 'alert-title',
-      confirmButton: ' btn btn-primary',
-      denyButton: 'btn btn-danger',
-      icon: 'alert-icon',
-    },
-    // showCancelButton: true,
+  // swalCustom = Swal.mixin({
+  //   customClass: {
+  //     container: '',
+  //     popup: 'alert-popup',
+  //     title: 'alert-title',
+  //     confirmButton: ' btn btn-primary',
+  //     denyButton: 'btn btn-danger',
+  //     icon: 'alert-icon',
+  //   },
+  //   // showCancelButton: true,
 
-    buttonsStyling: false,
-  });
+  //   buttonsStyling: false,
+  // });
   constructor(private router: Router) {}
 
   // errorRedirectAlert(text = "You won't be able to revert this!", url?: string) {
@@ -43,18 +43,18 @@ export class AlertService {
   //     });
   // }
 
-  fire<T = any>(options: SweetAlertOptions<T>, routes?: IRoutes) {
-    this.swalCustom.fire({ ...options }).then((result) => {
-      if (result.isConfirmed && routes?.urlConfi) {
-        this.router.navigate([routes?.urlConfi]);
-      } else if (result.isDenied && routes?.urlDeny) {
-        this.router.navigate([routes?.urlDeny]);
-      } else if (result.isDismissed && routes?.urlCancel) {
-        this.router.navigate([routes?.urlCancel]);
-      } else {
+  // fire<T = any>(options: SweetAlertOptions<T>, routes?: IRoutes) {
+  //   this.swalCustom.fire({ ...options }).then((result) => {
+  //     if (result.isConfirmed && routes?.urlConfi) {
+  //       this.router.navigate([routes?.urlConfi]);
+  //     } else if (result.isDenied && routes?.urlDeny) {
+  //       this.router.navigate([routes?.urlDeny]);
+  //     } else if (result.isDismissed && routes?.urlCancel) {
+  //       this.router.navigate([routes?.urlCancel]);
+  //     } else {
 
-        this.swalCustom.close()
-      }
-    });
-  }
+  //       this.swalCustom.close()
+  //     }
+  //   });
+  // }
 }

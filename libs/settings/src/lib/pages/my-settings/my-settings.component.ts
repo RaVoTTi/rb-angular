@@ -31,17 +31,17 @@ export class MySettingsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.alert.fire(
-      {
-        title: 'Something when wrong',
-        text: "We'll get it fixed as soon as we can",
-        icon: 'error',
-      },
-      {
-        urlConfi: '/app/books', // 🔴 TODOOO
-        urlCancel: '/app/books',
-      }
-    );
+    // this.alert.fire(
+    //   {
+    //     title: 'Something when wrong',
+    //     text: "We'll get it fixed as soon as we can",
+    //     icon: 'error',
+    //   },
+    //   {
+    //     urlConfi: '/app/books', // 🔴 TODOOO
+    //     urlCancel: '/app/books',
+    //   }
+    // );
     // this._initForm();
   }
 

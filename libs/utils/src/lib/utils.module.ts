@@ -18,6 +18,7 @@ import { SubNavComponent } from './components/sub-nav/sub-nav.component';
     ActionOutsideDirective,
     PressEnterDirective,
     NothingComponent,
+
     SubNavComponent,
 
 
@@ -27,6 +28,7 @@ import { SubNavComponent } from './components/sub-nav/sub-nav.component';
     DropdownComponent,
     SpinnerComponent,
     ErrorImageDirective,
+
     ErrorMsgDirective,
     ActionOutsideDirective,
     NothingComponent,

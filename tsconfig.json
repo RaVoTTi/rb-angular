@@ -20,6 +20,7 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "paths": {
+
       "auth-base": [
         "dist/auth-base"
       ],
@@ -31,6 +32,10 @@
       ],
       "checkout": [
         "dist/checkout"
+      ],
+      "components": [
+        "dist/components"
+
       ],
       "my-learning": [
         "dist/my-learning"

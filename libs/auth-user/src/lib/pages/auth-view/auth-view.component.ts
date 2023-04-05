@@ -68,10 +68,10 @@ export class AuthViewComponent implements OnInit {
       .subscribe({
         error: ({ error }) => {
           this.loginForm.enable();
-          this.alert.fire({
-            icon: 'error',
-            text: error?.msg ? error?.msg : 'Something happened',
-          });
+          // this.alert.fire({
+          //   icon: 'error',
+          //   text: error?.msg ? error?.msg : 'Something happened',
+          // });
         },
       });
   }
@@ -85,20 +85,20 @@ export class AuthViewComponent implements OnInit {
       .pipe(
         tap((response) => {
           if (response.ok) {
-            this.alert.fire({
-              icon: 'success',
-              text: 'User Created succesful',
-            });
+            // this.alert.fire({
+            //   icon: 'success',
+            //   text: 'User Created succesful',
+            // });
           }
         })
       )
       .subscribe({
         error: ({ error }) => {
           this.signUpForm.enable();
-          this.alert.fire({
-            icon: 'error',
-            text: error?.msg ? error?.msg : 'Something happened',
-          });
+          // this.alert.fire({
+          //   icon: 'error',
+          //   text: error?.msg ? error?.msg : 'Something happened',
+          // });
         },
       });
 

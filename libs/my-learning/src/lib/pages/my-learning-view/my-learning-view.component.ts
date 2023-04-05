@@ -5,7 +5,6 @@ import { take } from 'rxjs';
 import { Location } from '@angular/common';
 import { MyLearningService } from '../../services/my-learning.service';
 import { select, Store } from '@ngrx/store';
-import { runInThisContext } from 'vm';
 import { selectMyLearningById } from '../../state/my-learnings.selectors';
 
 @Component({

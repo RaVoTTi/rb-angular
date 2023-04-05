@@ -74,10 +74,10 @@ export class PlaceOrderComponent implements OnInit {
       .subscribe(
         error => {
           if(error){
-            this.alertService.fire({
-              text: 'Something wrong have happened',
-              icon: 'error',
-            });
+            // this.alertService.fire({
+            //   text: 'Something wrong have happened',
+            //   icon: 'error',
+            // });
           }
         }
       );

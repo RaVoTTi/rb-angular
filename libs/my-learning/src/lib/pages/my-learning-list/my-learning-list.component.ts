@@ -31,29 +31,29 @@ export class MyLearningListComponent implements OnInit {
 
       if (state) {
         if (state === 'success') {
-          this.alertService.fire(
-            {
-              title: 'Your purchased was succesful!!',
-              text: 'Enjoy your summarise..',
-              icon: 'success',
-            },
-            {
-              urlConfi: '/app/mylearning', // 🔴 TODOOO
-              urlCancel: '/app/mylearning',
-            }
-          );
+          // this.alertService.fire(
+          //   {
+          //     title: 'Your purchased was succesful!!',
+          //     text: 'Enjoy your summarise..',
+          //     icon: 'success',
+          //   },
+          //   {
+          //     urlConfi: '/app/mylearning', // 🔴 TODOOO
+          //     urlCancel: '/app/mylearning',
+          //   }
+          // );
         } else if (state === 'fail') {
-          this.alertService.fire(
-            {
-              title: 'The payment was unsuccesful!! ',
-              text: 'Check your card or try again',
-              icon: 'error',
-            },
-            {
-              urlConfi: '/app/mylearning', // 🔴 TODOOO
-              urlCancel: '/app/mylearning',
-            }
-          );
+          // this.alertService.fire(
+          //   {
+          //     title: 'The payment was unsuccesful!! ',
+          //     text: 'Check your card or try again',
+          //     icon: 'error',
+          //   },
+          //   {
+          //     urlConfi: '/app/mylearning', // 🔴 TODOOO
+          //     urlCancel: '/app/mylearning',
+          //   }
+          // );
         }
       }
     });

@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, UrlSegment } from '@angular/router';
+import {
+  PreloadAllModules,
+  RouterModule,
+  Routes,
+  UrlSegment,
+} from '@angular/router';
 import {
   BooksListComponent,
   BooksResolver,
   BookViewComponent,
   WishlistComponent,
-  TermsComponent
+  TermsComponent,
 } from 'libs/book-base/src';
 import { HomeComponent } from './pages/home/home.component';
 import { MainComponent } from './shared/main/main.component';
@@ -23,34 +28,15 @@ const routes: Routes = [
 
         // component: TestComponent,
       },
+
       {
         path: 'books',
-
-        component: BooksListComponent,
-
-        resolve: {
-          books: BooksResolver,
-        },
-      },
-      {
-        path: 'books/id/:id',
-        component: BookViewComponent,
-        resolve: {
-          books: BooksResolver,
-        },
-      },
-
-      {
-        path: 'books/wishlist',
-        component: WishlistComponent,
-        resolve: {
-          books: BooksResolver,
-        },
+        loadChildren: () =>
+          import('libs/book-base/src').then((m) => m.BookBaseModule),
       },
       {
         path: 'terms',
         component: TermsComponent,
-
       },
 
       {
@@ -80,7 +66,7 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: '/app/books',
+        redirectTo: '/app/home',
       },
     ],
   },
@@ -95,12 +81,17 @@ const routes: Routes = [
 
   {
     path: '**',
-    redirectTo: '/app/books',
+    redirectTo: '/app/home',
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [
+    RouterModule.forRoot(routes, {
+      useHash: true,
+      preloadingStrategy: PreloadAllModules,
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

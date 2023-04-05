@@ -61,12 +61,36 @@ import { TermsComponent } from './pages/terms/terms.component';
 //   //   ],
 //   // },
 // ];
+const routes: Routes = [
+  {
+    path: '',
+    component: BooksListComponent,
+    resolve: {
+      books: BooksResolver,
+    },
+  },
+  {
+    path: 'id/:id',
+    component: BookViewComponent,
+    resolve: {
+      books: BooksResolver,
+    },
+  },
+
+  {
+    path: 'wishlist',
+    component: WishlistComponent,
+    resolve: {
+      books: BooksResolver,
+    },
+  },
+];
+
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,
-    // RouterModule.forChild(routes),
+    RouterModule.forChild(routes),
     StoreModule.forFeature('books', booksReducer),
     UtilsModule,
     EffectsModule.forFeature([BooksEffects]),
