@@ -29,44 +29,37 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UtilsModule } from 'libs/utils/src';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { TermsComponent } from './pages/terms/terms.component';
-// import { WishResolver } from './services/wish.resolver';
-// import { BookEffects } from './state/books.effects';
 
-// const routes: Routes = [
-//   // {
-//   //   path: '',
+const routes: Routes = [
+  {
+    path: '',
+    component: BooksListComponent,
+    resolve: {
+      books: BooksResolver,
+    },
+  },
+  {
+    path: 'id/:id',
+    component: BookViewComponent,
+    resolve: {
+      books: BooksResolver,
+    },
+  },
 
-//   //   children: [
-//       {
-//         path: '',
-//         // pathMatch: 'full',
-//         component: BooksListComponent,
+  {
+    path: 'wishlist',
+    component: WishlistComponent,
+    resolve: {
+      books: BooksResolver,
+    },
+  },
+];
 
-//         // resolve: {
-//         //   books: BooksResolver,
-//         // },
-//       },
-//       {
-//         path: 'id/:id',
-//         component: BookViewComponent,
-//       },
-
-//       {
-//         path: 'wishlist',
-//         component: WishlistComponent,
-//         resolve: {
-//           books: BooksResolver,
-//         },
-//       },
-//   //   ],
-//   // },
-// ];
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,
-    // RouterModule.forChild(routes),
+    RouterModule.forChild(routes),
     StoreModule.forFeature('books', booksReducer),
     UtilsModule,
     EffectsModule.forFeature([BooksEffects]),

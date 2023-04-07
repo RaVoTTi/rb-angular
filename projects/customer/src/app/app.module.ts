@@ -18,20 +18,18 @@ import {
 // ME
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { BookBaseModule } from 'libs/book-base/src';
 import { MainComponent } from './shared/main/main.component';
+
 import { AuthBaseModule, JwtInterceptor } from 'libs/auth-base/src';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthNavbarComponent } from './shared/auth-navbar/auth-navbar.component';
 import { HttpErrorInterceptor, UtilsModule } from 'libs/utils/src';
 import * as fromRoot from './reducers';
 import { environment } from 'environments/environment';
-import { BootNavbarComponent } from './shared/boot-navbar/boot-navbar.component';
 import { ComponentStore } from '@ngrx/component-store';
 import { ComponentsModule } from 'libs/components/src';
 
@@ -55,10 +53,8 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
     NavbarComponent,
     AuthNavbarComponent,
     MainComponent,
-    BootNavbarComponent,
   ],
   imports: [
-    BookBaseModule,
     UtilsModule,
     BrowserModule,
     BrowserAnimationsModule,

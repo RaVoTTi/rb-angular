@@ -10,37 +10,7 @@ export class MainComponent {
   home!: boolean;
   loading = false;
 
-  constructor(private router: Router) {
-    this.router.events
-      .pipe(
-        filter(
-          (event): event is NavigationEnd => event instanceof NavigationEnd
-        )
-      )
-      .subscribe(
-        (event: NavigationEnd) => {
-          event.url.includes('home') ||
-          event.url.includes('settings') ||
-          event.url.includes('myorders') ||
-          event.url.includes('checkout') ||
-          event.url.includes('terms')
-            ? (this.home = true)
-            : (this.home = false);
-        }
+  constructor() {
 
-        // url.
-      );
-    this.router.events.subscribe((ev) => {
-      if (ev instanceof NavigationStart) {
-        this.loading = true;
-      }
-      if (
-        ev instanceof NavigationEnd ||
-        ev instanceof NavigationError ||
-        ev instanceof NavigationCancel
-      ) {
-        this.loading = false;
-      }
-    });
   }
 }
