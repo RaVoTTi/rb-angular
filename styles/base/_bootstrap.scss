@@ -3,31 +3,29 @@
 // @import "node_modules/bootstrap/scss/functions";
 
 $grid-breakpoints: (
-    xs: 0,
+  xs: 0,
   sm: 576px,
   md: 768px,
   lg: 992px,
   xl: 1296px,
-  xxl: 1400px
+  xxl: 1400px,
 );
 
 $primary: #3e7d73;
 $secondary: #d3d4db;
 $danger: #b03200;
 
-
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
-  
-  "danger": $danger
-  );
+
+  "danger": $danger,
+);
 
 // BUTTONS
 $btn-padding-y: 12px;
 $btn-padding-x: 20px;
 $btn-font-weight: 600;
-
 
 // DROPDOWN
 $dropdown-border-radius: 20px;
@@ -102,7 +100,6 @@ $dropdown-padding-y: 1rem;
 // $input-group-addon-color: $input-color;
 // $input-group-addon-bg: $gray-200;
 // $input-group-addon-border-color: $input-border-color;
-
 
 // $input-btn-padding-y:         .375rem;
 // $input-btn-padding-x:         .75rem;

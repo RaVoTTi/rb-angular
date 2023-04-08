@@ -33,28 +33,33 @@ import { TermsComponent } from './pages/terms/terms.component';
 const routes: Routes = [
   {
     path: '',
-    component: BooksListComponent,
-    resolve: {
-      books: BooksResolver,
-    },
-  },
-  {
-    path: 'id/:id',
-    component: BookViewComponent,
-    resolve: {
-      books: BooksResolver,
-    },
-  },
+    component: SearchHeaderComponent,
+    children: [
+      {
+        path: '',
+        component: BooksListComponent,
+        resolve: {
+          books: BooksResolver,
+        },
+      },
+      {
+        path: 'id/:id',
+        component: BookViewComponent,
+        resolve: {
+          books: BooksResolver,
+        },
+      },
 
-  {
-    path: 'wishlist',
-    component: WishlistComponent,
-    resolve: {
-      books: BooksResolver,
-    },
+      {
+        path: 'wishlist',
+        component: WishlistComponent,
+        resolve: {
+          books: BooksResolver,
+        },
+      },
+    ],
   },
 ];
-
 
 @NgModule({
   imports: [
@@ -73,7 +78,7 @@ const routes: Routes = [
     BooksListComponent,
     BookViewComponent,
     BookDetailComponent,
-    TermsComponent
+    TermsComponent,
   ],
   exports: [
     SearchHeaderComponent,

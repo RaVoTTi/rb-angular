@@ -1,6 +1,6 @@
 <section class="header">
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid flex-sm-wrap d-sm-flex">
+  <nav class="navbar navbar-expand-lg py-2 py-md-3">
+    <div class="container-fluid ">
       <a class="navbar-brand" routerLink="/app/home">
         <img src="assets/img/logo-header.svg" />
       </a>
@@ -42,7 +42,7 @@
             </div>
           </div>
           <a
-            class="nav-link"
+            class="nav-link mt-2"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
             routerLink="/app/books"
@@ -50,13 +50,13 @@
           >
 
           <a
-            class="nav-link"
+            class="nav-link mt-2"
             routerLinkActive="active"
             routerLink="/app/books/wishlist"
             >Wishlist</a
           >
           <a
-            class="nav-link"
+            class="nav-link mt-2"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
             routerLink="/app/mylearning"
@@ -76,22 +76,25 @@
             >Settings</a
           >
           <li class="dropdown ms-2 nav-item d-none d-lg-block">
-            <a
+            <button
               id="buttonDropdown"
-              class="img-user"
-              href="#"
               role="button"
               data-bs-display="static"
               data-bs-toggle="dropdown"
               aria-expanded="false"
               data-bs-offset="0,200"
             >
-              <img
+              <i
+                class="bi bi-person-circle user user-chip-md  bg-default"
+                style="font-size: 3rem"
+              ></i>
+
+              <!-- <img
                 src="assets/img/icons/icon-footer.svg"
                 class="user user-chip-md bg-default"
                 alt="user-image"
-              />
-            </a>
+              /> -->
+            </button>
             <div
               #dropdown
               id="dropdown"
@@ -105,10 +108,10 @@
               >
                 <div class="col-md-3 col-sm-3 col-3">
                   <img
-                    src="assets/img/icons/icon-footer.svg"
-                    class="user user-chip-xxlg bg-default"
-                    alt="user-image"
-                  />
+                  src="assets/img/icons/icon-footer.svg"
+                  class="user-icon"
+                  alt="user-image"
+                />
                 </div>
                 <div class="col-md-9 col-sm-9 col-9">
                   <div class="py-3 ps-3">
@@ -119,8 +122,8 @@
                     </div>
                     <div>
                       <small class="text-dark text-capitalize"
-                        >Defender of Education </small
-                      >
+                        >Defender of Education
+                      </small>
                     </div>
                   </div>
                 </div>
@@ -143,9 +146,9 @@
                   >
                 </li>
                 <li><hr class="dropdown-divider" /></li>
-                  <button class="btn btn-outline-danger me-3" (click)="logOut()" >
-                    Log Out
-                  </button>
+                <button class="btn btn-outline-danger me-3" (click)="logOut()">
+                  Log Out
+                </button>
               </ul>
             </div>
           </li>
