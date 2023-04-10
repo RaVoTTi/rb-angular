@@ -24,6 +24,8 @@ export class MyLearningResolver implements Resolve<boolean> {
       select(areMyLearningsLoaded),
       tap((myLearningsLoaded) => {
         if (!this.loading && !myLearningsLoaded ) {
+        // if (true) {
+
           this.loading = true;
           this.store.dispatch(loadAllMyLearnings());
         }

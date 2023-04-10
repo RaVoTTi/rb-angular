@@ -9,7 +9,7 @@ import {
   selectCountMyLearnings,
 } from '../../state/my-learnings.selectors';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertService } from 'libs/utils/src/lib/services/alert.service';
+import { AlertService } from 'libs/utils/src';
 
 @Component({
   selector: 'frontend-my-learning-list',
@@ -18,49 +18,58 @@ import { AlertService } from 'libs/utils/src/lib/services/alert.service';
 export class MyLearningListComponent implements OnInit {
   allMyLearnings$!: Observable<ILearning[]>;
   countMyLearnings$!: Observable<number>;
+  // allMyLearnings!: ILearning[];
 
   constructor(
     private router: Router,
     private alertService: AlertService,
     private route: ActivatedRoute,
-    private store: Store
+    private store: Store,
+    private myLearningService: MyLearningService
   ) {}
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      const state = params['state'];
+    // this.route.queryParams.subscribe((params) => {
+    //   const state = params['state'];
 
-      if (state) {
-        if (state === 'success') {
-          this.alertService.fire(
-            {
-              title: 'Your purchased was succesful!!',
-              text: 'Enjoy your summarise..',
-              icon: 'success',
-            },
-            {
-              urlConfi: '/app/mylearning', // 🔴 TODOOO
-              urlCancel: '/app/mylearning',
-            }
-          );
-        } else if (state === 'fail') {
-          this.alertService.fire(
-            {
-              title: 'The payment was unsuccesful!! ',
-              text: 'Check your card or try again',
-              icon: 'error',
-            },
-            {
-              urlConfi: '/app/mylearning', // 🔴 TODOOO
-              urlCancel: '/app/mylearning',
-            }
-          );
-        }
-      }
-    });
+    //   if (state) {
+    //     if (state === 'success') {
+    //       this.alertService.fire(
+    //         {
+    //           title: 'Your purchased was succesful!!',
+    //           text: 'Enjoy your summarise..',
+    //           icon: 'success',
+    //         },
+    //         {
+    //           urlConfi: '/app/mylearning', // 🔴 TODOOO
+    //           urlCancel: '/app/mylearning',
+    //         }
+    //       );
+    //     } else if (state === 'fail') {
+    //       this.alertService.fire(
+    //         {
+    //           title: 'The payment was unsuccesful!! ',
+    //           text: 'Check your card or try again',
+    //           icon: 'error',
+    //         },
+    //         {
+    //           urlConfi: '/app/mylearning', // 🔴 TODOOO
+    //           urlCancel: '/app/mylearning',
+    //         }
+    //       );
+    //     }
+    //   }
+    // });
     this.reload();
   }
   reload() {
+    // this.myLearningService
+    //   .getMyLearnings()
+    //   .pipe(take(1))
+    //   .subscribe((response) => {
+    //     this.allMyLearnings = response.result ? response.result : [];
+    //     console.log(this.allMyLearnings)
+    //   });
     this.allMyLearnings$ = this.store.pipe(select(selectAllMyLearnings));
     this.countMyLearnings$ = this.store.pipe(select(selectCountMyLearnings));
   }

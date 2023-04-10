@@ -15,6 +15,7 @@ export class MyLearningsEffects {
       ofType(loadAllMyLearnings),
       concatMap((action) => this.myLearningService.getMyLearnings()),
       map(({ result }) => {
+        console.log(result)
         const myLearnings = result ?? [];
         return allMyLearningsLoaded({ myLearnings });
       })

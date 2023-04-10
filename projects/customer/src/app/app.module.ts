@@ -76,7 +76,7 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
   ],
   providers: [
     // {provide: DefaultDataServiceConfig, useValue: defaultDataServiceConfig},
-    { provide: HTTP_INTERCEPTORS, useClass: HttpHeaderInterceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: HttpHeaderInterceptor, multi: true },
 
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },

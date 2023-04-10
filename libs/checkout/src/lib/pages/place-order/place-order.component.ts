@@ -15,7 +15,7 @@ import { environment } from 'environments/environment';
 
 import { CheckoutService } from '../../services/checkout.service';
 import { select, Store } from '@ngrx/store';
-import { IBook } from 'libs/utils/src';
+import { AlertService, IBook } from 'libs/utils/src';
 
 
 @Component({
@@ -39,7 +39,7 @@ export class PlaceOrderComponent implements OnInit {
     private route: ActivatedRoute,
     private bookBaseService: BookBaseService,
     private checkoutService: CheckoutService,
-    // private alertService: AlertService,
+    private alertService: AlertService,
     private router: Router,
     private store: Store
   ) {
@@ -74,12 +74,12 @@ export class PlaceOrderComponent implements OnInit {
       .postMyPlaceOrder(this.id)
       .subscribe(
         error => {
-          // if(error){
-          //   this.alertService.fire({
-          //     text: 'Something wrong have happened',
-          //     icon: 'error',
-          //   });
-          // }
+          if(error){
+            this.alertService.fire({
+              text: 'Something wrong have happened',
+              icon: 'error',
+            });
+          }
         }
       );
   }

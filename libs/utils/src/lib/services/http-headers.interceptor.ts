@@ -20,10 +20,10 @@ export class HttpHeaderInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
     // const token = this.store.pipe(select(tokenSelector)) ?? '';
-
+    console.log('paso')
     request = request.clone({
       setHeaders: {
-        'Cache-Control': 'max-age=31536000',
+        'Cache-Control': 'max-age=1',
       },
     });
     return next.handle(request);

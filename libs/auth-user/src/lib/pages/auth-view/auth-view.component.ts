@@ -10,7 +10,7 @@ import {
   ValidatorsService,
 } from 'libs/utils/src';
 import { ILogin } from 'libs/utils/src';
-import { AlertService } from 'libs/utils/src/lib/services/alert.service';
+import { AlertService } from 'libs/utils/src';
 
 @Component({
   selector: 'frontend-auth-view',
