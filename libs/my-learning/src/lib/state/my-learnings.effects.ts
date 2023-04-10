@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { selectBooksById } from 'libs/book-base/src';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { select, Store } from '@ngrx/store';
 import { concatMap, map, take } from 'rxjs';
-import { Action } from 'rxjs/internal/scheduler/Action';
 import { MyLearningService } from '../services/my-learning.service';
 import {
   allMyLearningsLoaded,
@@ -16,7 +14,6 @@ export class MyLearningsEffects {
     this.actions$.pipe(
       ofType(loadAllMyLearnings),
       concatMap((action) => this.myLearningService.getMyLearnings()),
-
       map(({ result }) => {
         const myLearnings = result ?? [];
         return allMyLearningsLoaded({ myLearnings });

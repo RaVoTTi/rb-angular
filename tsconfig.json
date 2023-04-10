@@ -29,6 +29,9 @@
       "book-base": [
         "dist/book-base"
       ],
+      "book-state": [
+        "dist/book-state"
+      ],
       "checkout": [
         "dist/checkout"
       ],
@@ -40,6 +43,9 @@
       ],
       "settings": [
         "dist/settings"
+      ],
+      "terms": [
+        "dist/terms"
       ],
       "test": [
         "dist/test"

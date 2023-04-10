@@ -20,7 +20,7 @@ export class BooksResolver implements Resolve<boolean> {
 
 
     return this.store.pipe(
-      select(areBooksLoaded),
+       select(areBooksLoaded),
       tap((booksLoaded) => {
         if (!this.loading && !booksLoaded ) {
           this.loading = true;

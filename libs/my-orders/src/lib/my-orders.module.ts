@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MyOrdersListComponent } from './pages/my-orders-list/my-orders-list.component';
 import { MyOrderViewComponent } from './pages/my-order-view/my-order-view.component';
 import { MyOrdersResolver } from './services/my-orders.resolver';
-import { BooksResolver } from 'libs/book-base/src';
+import { BooksResolver } from 'libs/book-state/src';
 import { UtilsModule } from 'libs/utils/src';
 const routes: Routes = [
   {

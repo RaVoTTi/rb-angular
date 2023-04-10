@@ -3,7 +3,6 @@ import { MyLearningsState } from './my-learnings.reducer';
 
 import * as fromMyLearnings from './my-learnings.reducer';
 import { IItem } from 'libs/utils/src';
-import { booksReducer } from 'libs/book-base/src';
 
 export const selectMyLearningsState =
   createFeatureSelector<MyLearningsState>('myLearnings');

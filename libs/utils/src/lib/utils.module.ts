@@ -8,8 +8,12 @@ import { PressEnterDirective } from './directives/press-enter.directive';
 import { ErrorImageDirective } from './directives/error-image.directive';
 import { NothingComponent } from './components/nothing/nothing.component';
 import { SubNavComponent } from './components/sub-nav/sub-nav.component';
+import { RouterModule } from '@angular/router';
 @NgModule({
-  imports: [CommonModule, ],
+  imports: [CommonModule,
+    RouterModule
+  
+  ],
   declarations: [
     DropdownComponent,
     SpinnerComponent,
@@ -19,7 +23,6 @@ import { SubNavComponent } from './components/sub-nav/sub-nav.component';
     PressEnterDirective,
     NothingComponent,
     SubNavComponent,
-
 
   ],
   exports: [
@@ -31,9 +34,6 @@ import { SubNavComponent } from './components/sub-nav/sub-nav.component';
     ActionOutsideDirective,
     NothingComponent,
     SubNavComponent,
-
-
-
   ],
   
 })

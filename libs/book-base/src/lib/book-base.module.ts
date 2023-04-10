@@ -11,24 +11,22 @@ import {
 } from '@ngrx/data';
 
 // ME
-import { WishlistService } from './services/wishlist.service';
+import { WishlistService } from '../../../book-state/src/lib/services/wishlist.service';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 // import { MessageService } from 'primeng/api';
 
 import { BooksListComponent } from './pages/books-list/books-list.component';
 import { BookViewComponent } from './pages/book-view/book-view.component';
-import { BooksResolver } from './services/books.resolver';
+import { BooksResolver } from '../../../book-state/src/lib/services/books.resolver';
 import { CardBookComponent } from '../../../book-base/src/lib/components/card-book/card-book.component';
 import { WishlistIconComponent } from './components/wishlist-icon/wishlist-icon.component';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { BooksEffects } from './state/books/books.effects';
-import { booksReducer } from './state/books/books.reducer';
+
 import { SearchHeaderComponent } from './components/search-header/search-header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UtilsModule } from 'libs/utils/src';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
-import { TermsComponent } from './pages/terms/terms.component';
+import { TermsComponent } from '../../../terms/src/lib/terms/terms.component';
+import { BookStateModule } from 'libs/book-state/src';
 
 const routes: Routes = [
   {
@@ -38,6 +36,7 @@ const routes: Routes = [
       {
         path: '',
         component: BooksListComponent,
+        
         resolve: {
           books: BooksResolver,
         },
@@ -65,10 +64,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    StoreModule.forFeature('books', booksReducer),
     UtilsModule,
-    EffectsModule.forFeature([BooksEffects]),
     ReactiveFormsModule,
+    BookStateModule
   ],
   declarations: [
     WishlistIconComponent,
@@ -78,21 +76,15 @@ const routes: Routes = [
     BooksListComponent,
     BookViewComponent,
     BookDetailComponent,
-    TermsComponent,
   ],
   exports: [
     SearchHeaderComponent,
-    TermsComponent,
     WishlistIconComponent,
     CardBookComponent,
     BooksListComponent,
     BookViewComponent,
   ],
-  providers: [
-    // MessageService,
-    BooksResolver,
-    // WishResolver
-  ],
+
 })
 export class BookBaseModule {
   constructor(wishlistService: WishlistService) {

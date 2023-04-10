@@ -6,12 +6,9 @@ import {
   UrlSegment,
 } from '@angular/router';
 import {
-  BooksListComponent,
-  BooksResolver,
-  BookViewComponent,
-  WishlistComponent,
   TermsComponent,
 } from 'libs/book-base/src';
+
 import { HomeComponent } from './pages/home/home.component';
 import { MainComponent } from './shared/main/main.component';
 import { IsLoggedIn, IsLoggedOut } from 'libs/auth-base/src';
@@ -36,7 +33,8 @@ const routes: Routes = [
       },
       {
         path: 'terms',
-        component: TermsComponent,
+        loadChildren: () =>
+        import('libs/terms/src').then((m) => m.TermsModule),
       },
 
       {

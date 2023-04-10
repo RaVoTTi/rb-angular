@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'environments/environment';
 import { IBook } from 'libs/utils/src';
-import { WishlistService } from '../../services/wishlist.service';
+import { WishlistService } from '../../../../../book-state/src/lib/services/wishlist.service';
 
 @Component({
   selector: 'frontend-book-detail',

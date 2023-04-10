@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of, take, takeLast } from 'rxjs';
 import {  IBook, IItem } from 'libs/utils/src';
-import { WishlistService } from '../../services/wishlist.service';
+import { WishlistService } from '../../../../../book-state/src/lib/services/wishlist.service';
 import { select, Store } from '@ngrx/store';
-import {
-  selectAllBooks,
-  selectAllBooksAsItems,
-} from '../../state/books/books.selectors';
 import { Router } from '@angular/router';
+import { selectAllBooks, selectAllBooksAsItems } from 'libs/book-state/src';
 
 @Component({
   selector: 'robinbook-books-list',

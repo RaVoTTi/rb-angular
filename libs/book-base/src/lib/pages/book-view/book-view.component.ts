@@ -5,10 +5,10 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of, take } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { BookBaseService } from '../../services/book-base.service';
-import { WishlistService } from '../../services/wishlist.service';
+import { BookBaseService } from '../../../../../book-state/src/lib/services/book-base.service';
+import { WishlistService } from '../../../../../book-state/src/lib/services/wishlist.service';
 import { select, Store } from '@ngrx/store';
-import { selectBooksById } from '../../state/books/books.selectors';
+import { selectBooksById } from 'libs/book-state/src';
 
 @Component({
   selector: 'robinbook-book-view',

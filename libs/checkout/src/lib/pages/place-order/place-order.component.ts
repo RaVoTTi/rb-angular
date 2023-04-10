@@ -9,7 +9,7 @@ import {
 import { ORDER_CONDITION } from '../../helpers/order-conditions';
 import { ActivatedRoute, Router } from '@angular/router';
 import { take, timer } from 'rxjs';
-import { BookBaseService, selectBooksById } from 'libs/book-base/src';
+import { BookBaseService, selectBooksById } from 'libs/book-state/src';
 // import { AlertService, IBook } from 'libs/utils/src';
 import { environment } from 'environments/environment';
 

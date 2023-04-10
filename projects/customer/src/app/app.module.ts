@@ -27,7 +27,7 @@ import { MainComponent } from './shared/main/main.component';
 import { AuthBaseModule, JwtInterceptor } from 'libs/auth-base/src';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthNavbarComponent } from './shared/auth-navbar/auth-navbar.component';
-import { HttpErrorInterceptor, UtilsModule } from 'libs/utils/src';
+import { HttpErrorInterceptor, HttpHeaderInterceptor, UtilsModule } from 'libs/utils/src';
 import * as fromRoot from './reducers';
 import { environment } from 'environments/environment';
 import { ComponentStore } from '@ngrx/component-store';
@@ -76,6 +76,8 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
   ],
   providers: [
     // {provide: DefaultDataServiceConfig, useValue: defaultDataServiceConfig},
+    { provide: HTTP_INTERCEPTORS, useClass: HttpHeaderInterceptor, multi: true },
+
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
 

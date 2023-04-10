@@ -10,6 +10,7 @@ import {
   ValidatorsService,
 } from 'libs/utils/src';
 import { ILogin } from 'libs/utils/src';
+import { AlertService } from 'libs/utils/src/lib/services/alert.service';
 
 @Component({
   selector: 'frontend-auth-view',
@@ -26,7 +27,7 @@ export class AuthViewComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authBaseService: AuthBaseService,
     private store: Store,
-    // private alert: AlertService,
+    private alert: AlertService,
     private errorH: ErrorHandlerService,
     private vs: ValidatorsService // private messageService: MessageService
   ) {
@@ -67,10 +68,10 @@ export class AuthViewComponent implements OnInit {
       .subscribe({
         error: ({ error }) => {
           this.loginForm.enable();
-          // this.alert.fire({
-          //   icon: 'error',
-          //   text: error?.msg ? error?.msg : 'Something happened',
-          // });
+          this.alert.fire({
+            icon: 'error',
+            text: error?.msg ? error?.msg : 'Something happened',
+          });
         },
       });
   }
@@ -83,21 +84,21 @@ export class AuthViewComponent implements OnInit {
       .postSignUp(this.signUpForm.value)
       .pipe(
         tap((response) => {
-          // if (response.ok) {
-          //   this.alert.fire({
-          //     icon: 'success',
-          //     text: 'User Created succesful',
-          //   });
-          // }
+          if (response.ok) {
+            this.alert.fire({
+              icon: 'success',
+              text: 'User Created succesful',
+            });
+          }
         })
       )
       .subscribe({
         error: ({ error }) => {
           this.signUpForm.enable();
-          // this.alert.fire({
-          //   icon: 'error',
-          //   text: error?.msg ? error?.msg : 'Something happened',
-          // });
+          this.alert.fire({
+            icon: 'error',
+            text: error?.msg ? error?.msg : 'Something happened',
+          });
         },
       });
 

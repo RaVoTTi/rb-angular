@@ -1,7 +1,7 @@
 import { environment } from 'environments/environment';
 import { IBook } from 'libs/utils/src';
 import { Component, Input } from '@angular/core';
-import { WishlistService } from '../../services/wishlist.service';
+import { WishlistService } from '../../../../../book-state/src/lib/services/wishlist.service';
 
 @Component({
   selector: 'frontend-card-book',

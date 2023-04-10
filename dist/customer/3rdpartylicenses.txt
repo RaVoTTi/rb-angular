@@ -34,6 +34,8 @@ auth-user
 
 book-base
 
+book-state
+
 bootstrap-icons
 MIT
 The MIT License (MIT)
@@ -274,6 +276,8 @@ Apache-2.0
 
 
 settings
+
+terms
 
 tslib
 0BSD

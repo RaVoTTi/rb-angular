@@ -2,6 +2,7 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
+import { selectSearchItems } from 'libs/book-state/src';
 import { IItem } from 'libs/utils/src';
 import {
   debounceTime,
@@ -11,10 +12,6 @@ import {
   Observable,
   tap,
 } from 'rxjs';
-import {
-  selectAllBooksAsItems,
-  selectSearchItems,
-} from '../../state/books/books.selectors';
 
 @Component({
   selector: 'frontend-search-header',
