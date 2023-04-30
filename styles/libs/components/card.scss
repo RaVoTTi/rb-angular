@@ -1,0 +1,75 @@
+.card {
+  background-color: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+
+  &__image {
+    // align-self: center;
+
+    flex: 0 0 400px;
+    border-radius: 20px;
+    margin: 1rem;
+    max-width: min(200px, 80%);
+    overflow: hidden;
+    position: relative;
+
+    img {
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    padding: 24px;
+  }
+
+  &__title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  &__description {
+    color: #777;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+  &__tag {
+    color: #777;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+
+  &__button {
+    background-color: #0077ff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #0065d6;
+    }
+  }
+}
+.card:hover{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}

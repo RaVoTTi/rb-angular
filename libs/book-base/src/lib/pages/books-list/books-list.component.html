@@ -6,6 +6,11 @@
     [isFavorite]="isFavorite(book._id)"
   >
   </frontend-card-book>
+  <!-- <rb-card
+  *ngFor="let book of allBooks$ | async; let i = index"
+  [book]="book"
+>
+</rb-card> -->
 
   <ng-template #loading>
     <div

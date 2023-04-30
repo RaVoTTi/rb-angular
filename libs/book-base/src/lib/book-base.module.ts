@@ -27,6 +27,7 @@ import { UtilsModule } from 'libs/utils/src';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { TermsComponent } from '../../../terms/src/lib/terms/terms.component';
 import { BookStateModule } from 'libs/book-state/src';
+import { ComponentsModule } from 'libs/components/src';
 
 const routes: Routes = [
   {
@@ -66,7 +67,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     UtilsModule,
     ReactiveFormsModule,
-    BookStateModule
+    BookStateModule,
+    ComponentsModule
   ],
   declarations: [
     WishlistIconComponent,

@@ -155,7 +155,7 @@
               "fileReplacements": [
                 {
                   "replace": "environments/environment.ts",
-                  "with": "environments/environment.prod.ts"
+                  "with": "environments/environment.ts"
                 },
                 {
                   "replace": "src/index.html",
