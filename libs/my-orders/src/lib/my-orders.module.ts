@@ -17,14 +17,14 @@ const routes: Routes = [
   {
     path: 'id/:id',
     component: MyOrderViewComponent,
-    resolve: {
-      books: BooksResolver,
-      myOrders: MyOrdersResolver,
-    },
+    // resolve: {
+    //   books: BooksResolver,
+    //   myOrders: MyOrdersResolver,
+    // },
   },
 ];
 @NgModule({
-  imports: [CommonModule,UtilsModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, UtilsModule, RouterModule.forChild(routes)],
   declarations: [MyOrdersListComponent, MyOrderViewComponent],
 })
 export class MyOrdersModule {}

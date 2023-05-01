@@ -134,6 +134,12 @@
                   "maximumError": "4kb"
                 }
               ],
+              "fileReplacements": [
+                {
+                  "replace": "environments/environment.ts",
+                  "with": "environments/environment.prod.ts"
+                }
+              ],
               "outputHashing": "all"
             },
             "development": {
@@ -151,17 +157,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "customer:build:production",
-              "fileReplacements": [
-                {
-                  "replace": "environments/environment.ts",
-                  "with": "environments/environment.ts"
-                },
-                {
-                  "replace": "src/index.html",
-                  "with": "src/index.prod.html"
-                }
-              ]
+              "browserTarget": "customer:build:production"
             },
             "development": {
               "browserTarget": "customer:build:development"
@@ -231,7 +227,6 @@
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "project": "libs/auth-user/ng-package.json"
-            
           },
           "configurations": {
             "production": {
@@ -457,10 +452,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "libs/components/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
@@ -490,10 +482,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "libs/book-state/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
@@ -523,10 +512,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "libs/terms/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
